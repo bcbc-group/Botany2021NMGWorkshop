@@ -2,7 +2,7 @@
 
 A repo for scripts and associated files for the 2021 Virtual Nonmodel Genomics Workshop
 
-The contributors to this workshop are: Jacob Landis (jbl256@cornell.edu) Fay-Wei Li (fl329@cornell.edu) Adrian Powell (afp43@cornell.edu) Andrew Nelson (an425@cornell.edu) Suzy Strickler (srs57@cornell.edu) Jing Zhang (jz322@cornell.edu)
+The contributors to this workshop are: Jacob Landis (jbl256@cornell.edu) Fay-Wei Li (fl329@cornell.edu) Adrian Powell (afp43@cornell.edu) Bikash Shrestha (bikash.shrestha@uconn.edu) Suzy Strickler (srs57@cornell.edu) Jing Zhang (jz322@cornell.edu)
 
 The focus of the workshop is long-read genome sequencing, assembly, annotation, and downstream analyses. The taxonomic focus is Utricularia gibba, with a 78 MB genome and recent high quality published genome in the paper "Long-read sequencing uncovers the adaptive topography of a carnivorous plant genome" by Lan et al. 2017 in PNAS.
 
