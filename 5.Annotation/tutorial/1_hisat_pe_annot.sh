@@ -14,11 +14,11 @@ cd $1
 mkdir /scratch/annotation_output
 cd /scratch/annotation_output
 #cp /scratch/Botany2020NMGWorkshop/annotation/2transfer/contig_15.fasta .
-ln -s  /scratch/BotanyNMGWorkshop/annotation/2transfer/contig_15.fasta .
-ln -s /scratch/Botany2020NMGWorkshop/annotation/2transfer/*.fastq .
+ln -s  /scratch/BotanyNMGWorkshop/annotation/2transfer/contig_15_masked.fasta .
+ln -s /scratch/BotanyNMGWorkshop/annotation/2transfer/*.fastq .
 
 #index reference fasta file; We will use only contig_15 for demo purposes
- /opt/hisat-genotype-top/hisat2-build contig_15.fasta contig_15
+ /opt/hisat-genotype-top/hisat2-build contig_15_masked.fasta contig_15
 
 #map RNA-seq reads to reference genome fasta file
 for file in `dir -d *_1.fastq` ; do
