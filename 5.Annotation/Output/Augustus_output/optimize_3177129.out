@@ -1,0 +1,306 @@
+xanadu-17
+Will create parameters for a EUKARYOTIC species!
+creating directory /home/FCAM/bshrestha/Augustus/config/species/Ugibba/ ...
+creating /home/FCAM/bshrestha/Augustus/config/species/Ugibba/Ugibba_parameters.cfg ...
+creating /home/FCAM/bshrestha/Augustus/config/species/Ugibba/Ugibba_weightmatrix.txt ...
+creating /home/FCAM/bshrestha/Augustus/config/species/Ugibba/Ugibba_metapars.cfg ...
+The necessary files for training Ugibba have been created.
+Now, either run etraining or optimize_parameters.pl with --species=Ugibba.
+etraining quickly estimates the parameters from a file with training genes.
+optimize_augustus.pl alternates running etraining and augustus to find optimal metaparameters.
+
+Splitting training file into 8 buckets...
+Reading in the meta parameters used for optimization from /home/FCAM/bshrestha/Augustus/config/species/generic/generic_metapars.cfg...
+Reading in the starting meta parameters from /home/FCAM/bshrestha/Augustus/config/species/Ugibba/Ugibba_parameters.cfg...
+bucket 1 2 3 4 5 6 7 8 
+starting accuracy: 0.9065, 0.8711, 0.6452, 0.6289, 0.0000, 0.0000, -1.00, -1.00, starting target: 0.6240
+improving parameter /Constant/dss_end curently set to 4
+1-4
+/Constant/dss_end: checking values 1	2	3	4
+bucket 1 2 3 4 5 6 7 8 
+bucket 1 2 3 4 5 6 7 8 
+bucket 1 2 3 4 5 6 7 8 
+found improvement: 0.9166, 0.8658, 0.6634, 0.6244, 0.0000, 0.0000, -1.00, -1.00, optimal target: 0.6275
+changing /Constant/dss_end to 3
+/Constant/dss_end	3
+/Constant/dss_start	3
+/Constant/ass_start	3
+/Constant/ass_end	2
+/Constant/ass_upwindow_size	30
+/IntronModel/d	100
+/IntronModel/ass_motif_memory	3
+/IntronModel/ass_motif_radius	3
+/ExonModel/tis_motif_memory	3
+/ExonModel/tis_motif_radius	2
+/Constant/trans_init_window	20
+/Constant/init_coding_len	15
+/ExonModel/patpseudocount	5.0
+/ExonModel/etpseudocount	3
+/ExonModel/etorder	2
+/Constant/intterm_coding_len	5
+/ExonModel/slope_of_bandwidth	0.3
+/ExonModel/minwindowcount	10
+/IGenicModel/patpseudocount	5.0
+/IntronModel/patpseudocount	5.0
+/IntronModel/slope_of_bandwidth	0.4
+/IntronModel/minwindowcount	4
+/IntronModel/asspseudocount	0.00266
+/IntronModel/dsspseudocount	0.0005
+/IntronModel/dssneighborfactor	0.00173
+/ExonModel/minPatSum	233.3
+/Constant/probNinCoding	0.23
+/Constant/decomp_num_steps	1
+Writing new parameters to /home/FCAM/bshrestha/Augustus/config/species/Ugibba/Ugibba_parameters.cfg...
+retrieve accuracy from previous computation
+values  1	2	3	4
+targets 0.6070	0.6104	0.6275	0.6240
+/Constant/dss_end: checking values 3
+retrieve accuracy from previous computation
+values  3
+targets 0.6275
+improving parameter /Constant/dss_start curently set to 3
+1-3
+/Constant/dss_start: checking values 1	2	3
+bucket 1 2 3 4 5 6 7 8 
+bucket 1 2 3 4 5 6 7 8 
+found improvement: 0.9214, 0.8634, 0.6671, 0.6200, 0.0000, 0.0000, -1.00, -1.00, optimal target: 0.6277
+changing /Constant/dss_start to 2
+/Constant/dss_end	3
+/Constant/dss_start	2
+/Constant/ass_start	3
+/Constant/ass_end	2
+/Constant/ass_upwindow_size	30
+/IntronModel/d	100
+/IntronModel/ass_motif_memory	3
+/IntronModel/ass_motif_radius	3
+/ExonModel/tis_motif_memory	3
+/ExonModel/tis_motif_radius	2
+/Constant/trans_init_window	20
+/Constant/init_coding_len	15
+/ExonModel/patpseudocount	5.0
+/ExonModel/etpseudocount	3
+/ExonModel/etorder	2
+/Constant/intterm_coding_len	5
+/ExonModel/slope_of_bandwidth	0.3
+/ExonModel/minwindowcount	10
+/IGenicModel/patpseudocount	5.0
+/IntronModel/patpseudocount	5.0
+/IntronModel/slope_of_bandwidth	0.4
+/IntronModel/minwindowcount	4
+/IntronModel/asspseudocount	0.00266
+/IntronModel/dsspseudocount	0.0005
+/IntronModel/dssneighborfactor	0.00173
+/ExonModel/minPatSum	233.3
+/Constant/probNinCoding	0.23
+/Constant/decomp_num_steps	1
+Writing new parameters to /home/FCAM/bshrestha/Augustus/config/species/Ugibba/Ugibba_parameters.cfg...
+retrieve accuracy from previous computation
+values  1	2	3
+targets 0.6188	0.6277	0.6275
+/Constant/dss_start: checking values 2
+retrieve accuracy from previous computation
+values  2
+targets 0.6277
+improving parameter /Constant/ass_start curently set to 3
+1-3
+/Constant/ass_start: checking values 1	2	3
+bucket 1 2 3 4 5 6 7 8 
+found improvement: 0.9240, 0.8630, 0.6723, 0.6218, 0.0000, 0.0000, -1.00, -1.00, optimal target: 0.6294
+changing /Constant/ass_start to 1
+/Constant/dss_end	3
+/Constant/dss_start	2
+/Constant/ass_start	1
+/Constant/ass_end	2
+/Constant/ass_upwindow_size	30
+/IntronModel/d	100
+/IntronModel/ass_motif_memory	3
+/IntronModel/ass_motif_radius	3
+/ExonModel/tis_motif_memory	3
+/ExonModel/tis_motif_radius	2
+/Constant/trans_init_window	20
+/Constant/init_coding_len	15
+/ExonModel/patpseudocount	5.0
+/ExonModel/etpseudocount	3
+/ExonModel/etorder	2
+/Constant/intterm_coding_len	5
+/ExonModel/slope_of_bandwidth	0.3
+/ExonModel/minwindowcount	10
+/IGenicModel/patpseudocount	5.0
+/IntronModel/patpseudocount	5.0
+/IntronModel/slope_of_bandwidth	0.4
+/IntronModel/minwindowcount	4
+/IntronModel/asspseudocount	0.00266
+/IntronModel/dsspseudocount	0.0005
+/IntronModel/dssneighborfactor	0.00173
+/ExonModel/minPatSum	233.3
+/Constant/probNinCoding	0.23
+/Constant/decomp_num_steps	1
+Writing new parameters to /home/FCAM/bshrestha/Augustus/config/species/Ugibba/Ugibba_parameters.cfg...
+bucket 1 2 3 4 5 6 7 8 
+found improvement: 0.9267, 0.8639, 0.6774, 0.6239, 0.0000, 0.0000, -1.00, -1.00, optimal target: 0.6314
+changing /Constant/ass_start to 2
+/Constant/dss_end	3
+/Constant/dss_start	2
+/Constant/ass_start	2
+/Constant/ass_end	2
+/Constant/ass_upwindow_size	30
+/IntronModel/d	100
+/IntronModel/ass_motif_memory	3
+/IntronModel/ass_motif_radius	3
+/ExonModel/tis_motif_memory	3
+/ExonModel/tis_motif_radius	2
+/Constant/trans_init_window	20
+/Constant/init_coding_len	15
+/ExonModel/patpseudocount	5.0
+/ExonModel/etpseudocount	3
+/ExonModel/etorder	2
+/Constant/intterm_coding_len	5
+/ExonModel/slope_of_bandwidth	0.3
+/ExonModel/minwindowcount	10
+/IGenicModel/patpseudocount	5.0
+/IntronModel/patpseudocount	5.0
+/IntronModel/slope_of_bandwidth	0.4
+/IntronModel/minwindowcount	4
+/IntronModel/asspseudocount	0.00266
+/IntronModel/dsspseudocount	0.0005
+/IntronModel/dssneighborfactor	0.00173
+/ExonModel/minPatSum	233.3
+/Constant/probNinCoding	0.23
+/Constant/decomp_num_steps	1
+Writing new parameters to /home/FCAM/bshrestha/Augustus/config/species/Ugibba/Ugibba_parameters.cfg...
+retrieve accuracy from previous computation
+values  1	2	3
+targets 0.6294	0.6314	0.6277
+/Constant/ass_start: checking values 2
+retrieve accuracy from previous computation
+values  2
+targets 0.6314
+improving parameter /Constant/ass_end curently set to 2
+0-4
+/Constant/ass_end: checking values 0	1	2	3	4
+bucket 1 2 3 4 5 6 7 8 
+bucket 1 2 3 4 5 6 7 8 
+retrieve accuracy from previous computation
+bucket 1 2 3 4 5 6 7 8 
+bucket 1 2 3 4 5 6 7 8 
+values  0	1	2	3	4
+targets 0.6230	0.6296	0.6314	0.6275	0.6115
+improving parameter /Constant/ass_upwindow_size curently set to 30
+1-50
+/Constant/ass_upwindow_size: checking values 1	13	25	37	50
+bucket 1 2 3 4 5 6 7 8 
+bucket 1 2 3 4 5 6 7 8 
+bucket 1 2 3 4 5 6 7 8 
+bucket 1 2 3 4 5 6 7 8 
+bucket 1 2 3 4 5 6 7 8 
+values  1	13	25	37	50
+targets 0.6025	0.6223	0.6290	0.6313	0.6305
+improving parameter /IntronModel/d curently set to 100
+100-950
+/IntronModel/d: checking values 100	312	525	737	950
+retrieve accuracy from previous computation
+bucket 1 2 3 4 5 6 7 8 
+found improvement: 0.9219, 0.8779, 0.6770, 0.6487, 0.0000, 0.0000, -1.00, -1.00, optimal target: 0.6377
+changing /IntronModel/d to 312
+/Constant/dss_end	3
+/Constant/dss_start	2
+/Constant/ass_start	2
+/Constant/ass_end	2
+/Constant/ass_upwindow_size	30
+/IntronModel/d	312
+/IntronModel/ass_motif_memory	3
+/IntronModel/ass_motif_radius	3
+/ExonModel/tis_motif_memory	3
+/ExonModel/tis_motif_radius	2
+/Constant/trans_init_window	20
+/Constant/init_coding_len	15
+/ExonModel/patpseudocount	5.0
+/ExonModel/etpseudocount	3
+/ExonModel/etorder	2
+/Constant/intterm_coding_len	5
+/ExonModel/slope_of_bandwidth	0.3
+/ExonModel/minwindowcount	10
+/IGenicModel/patpseudocount	5.0
+/IntronModel/patpseudocount	5.0
+/IntronModel/slope_of_bandwidth	0.4
+/IntronModel/minwindowcount	4
+/IntronModel/asspseudocount	0.00266
+/IntronModel/dsspseudocount	0.0005
+/IntronModel/dssneighborfactor	0.00173
+/ExonModel/minPatSum	233.3
+/Constant/probNinCoding	0.23
+/Constant/decomp_num_steps	1
+Writing new parameters to /home/FCAM/bshrestha/Augustus/config/species/Ugibba/Ugibba_parameters.cfg...
+bucket 1 2 3 4 5 6 7 8 
+found improvement: 0.9175, 0.8859, 0.6768, 0.6624, 0.0000, 0.0000, -1.00, -1.00, optimal target: 0.6409
+changing /IntronModel/d to 525
+/Constant/dss_end	3
+/Constant/dss_start	2
+/Constant/ass_start	2
+/Constant/ass_end	2
+/Constant/ass_upwindow_size	30
+/IntronModel/d	525
+/IntronModel/ass_motif_memory	3
+/IntronModel/ass_motif_radius	3
+/ExonModel/tis_motif_memory	3
+/ExonModel/tis_motif_radius	2
+/Constant/trans_init_window	20
+/Constant/init_coding_len	15
+/ExonModel/patpseudocount	5.0
+/ExonModel/etpseudocount	3
+/ExonModel/etorder	2
+/Constant/intterm_coding_len	5
+/ExonModel/slope_of_bandwidth	0.3
+/ExonModel/minwindowcount	10
+/IGenicModel/patpseudocount	5.0
+/IntronModel/patpseudocount	5.0
+/IntronModel/slope_of_bandwidth	0.4
+/IntronModel/minwindowcount	4
+/IntronModel/asspseudocount	0.00266
+/IntronModel/dsspseudocount	0.0005
+/IntronModel/dssneighborfactor	0.00173
+/ExonModel/minPatSum	233.3
+/Constant/probNinCoding	0.23
+/Constant/decomp_num_steps	1
+Writing new parameters to /home/FCAM/bshrestha/Augustus/config/species/Ugibba/Ugibba_parameters.cfg...
+bucket 1 2 3 4 5 6 7 8 
+found improvement: 0.9128, 0.8882, 0.6748, 0.6673, 0.0000, 0.0000, -1.00, -1.00, optimal target: 0.6411
+changing /IntronModel/d to 737
+/Constant/dss_end	3
+/Constant/dss_start	2
+/Constant/ass_start	2
+/Constant/ass_end	2
+/Constant/ass_upwindow_size	30
+/IntronModel/d	737
+/IntronModel/ass_motif_memory	3
+/IntronModel/ass_motif_radius	3
+/ExonModel/tis_motif_memory	3
+/ExonModel/tis_motif_radius	2
+/Constant/trans_init_window	20
+/Constant/init_coding_len	15
+/ExonModel/patpseudocount	5.0
+/ExonModel/etpseudocount	3
+/ExonModel/etorder	2
+/Constant/intterm_coding_len	5
+/ExonModel/slope_of_bandwidth	0.3
+/ExonModel/minwindowcount	10
+/IGenicModel/patpseudocount	5.0
+/IntronModel/patpseudocount	5.0
+/IntronModel/slope_of_bandwidth	0.4
+/IntronModel/minwindowcount	4
+/IntronModel/asspseudocount	0.00266
+/IntronModel/dsspseudocount	0.0005
+/IntronModel/dssneighborfactor	0.00173
+/ExonModel/minPatSum	233.3
+/Constant/probNinCoding	0.23
+/Constant/decomp_num_steps	1
+Writing new parameters to /home/FCAM/bshrestha/Augustus/config/species/Ugibba/Ugibba_parameters.cfg...
+bucket 1 2 3 4 5 6 7 8 
+values  100	312	525	737	950
+targets 0.6314	0.6377	0.6409	0.6411	0.6403
+/IntronModel/d: checking values 525	631	737	843	949
+retrieve accuracy from previous computation
+bucket 1 2 3 4 5 6 7 8 
+retrieve accuracy from previous computation
+bucket 1 2 3 4 5 6 7 8 
+bucket 1 2 3 

@@ -1,0 +1,17 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+g1095.t1             -            149 106462at2157         -            122   4.4e-48  159.5   0.0   1   1   5.9e-51     5e-48  159.3   0.0     1   122     2   131     2   131 0.91 -
+g1328.t1             -            586 106462at2157         -            122   8.9e-47  155.3   0.0   1   2   2.4e-49     2e-46  154.1   0.0     1   122    84   213    84   213 0.92 -
+g1328.t1             -            586 106462at2157         -            122   8.9e-47  155.3   0.0   2   2       1.7   1.4e+03   -3.5   0.0    47    65   402   419   370   422 0.61 -
+g33.t1               -            367 106462at2157         -            122     5e-43  143.2   0.0   1   1   8.5e-46   7.2e-43  142.7   0.0     1   122   217   346   217   346 0.91 -
+#
+# Program:         hmmsearch
+# Version:         3.2.1 (June 2018)
+# Pipeline mode:   SEARCH
+# Query file:      /labs/Wegrzyn/bikash/botany2021/braker/busco_downloads/lineages/archaea_odb10/hmms/106462at2157.hmm
+# Target file:     /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.aa
+# Option settings: /isg/shared/apps/hmmer/3.2.1/bin/hmmsearch --domtblout /labs/Wegrzyn/bikash/botany2021/braker/busco_output/auto_lineage/run_archaea_odb10/hmmer_output/106462at2157.out --cpu 1 /labs/Wegrzyn/bikash/botany2021/braker/busco_downloads/lineages/archaea_odb10/hmms/106462at2157.hmm /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.aa 
+# Current dir:     /labs/Wegrzyn/bikash/botany2021/braker
+# Date:            Thu Jul 15 15:21:11 2021
+# [ok]

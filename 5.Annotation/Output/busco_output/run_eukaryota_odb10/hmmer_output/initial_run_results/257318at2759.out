@@ -1,0 +1,17 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+g2068.t1             -            602 257318at2759         -            324     0.022   11.0   0.3   1   2      0.12   1.5e+02   -1.6   0.0    46    63   257   274   252   281 0.85 -
+g2068.t1             -            602 257318at2759         -            324     0.022   11.0   0.3   2   2   5.4e-05     0.068    9.4   0.2   117   167   309   361   299   424 0.86 -
+g2068.t2             -            604 257318at2759         -            324     0.022   11.0   0.3   1   2      0.12   1.5e+02   -1.6   0.0    46    63   259   276   254   283 0.85 -
+g2068.t2             -            604 257318at2759         -            324     0.022   11.0   0.3   2   2   5.4e-05     0.068    9.4   0.2   117   167   311   363   301   426 0.86 -
+#
+# Program:         hmmsearch
+# Version:         3.2.1 (June 2018)
+# Pipeline mode:   SEARCH
+# Query file:      /labs/Wegrzyn/bikash/botany2021/braker/busco_downloads/lineages/eukaryota_odb10/hmms/257318at2759.hmm
+# Target file:     /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.aa
+# Option settings: /isg/shared/apps/hmmer/3.2.1/bin/hmmsearch --domtblout /labs/Wegrzyn/bikash/botany2021/braker/busco_output/auto_lineage/run_eukaryota_odb10/hmmer_output/initial_run_results/257318at2759.out --cpu 1 /labs/Wegrzyn/bikash/botany2021/braker/busco_downloads/lineages/eukaryota_odb10/hmms/257318at2759.hmm /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.aa 
+# Current dir:     /labs/Wegrzyn/bikash/botany2021/braker
+# Date:            Thu Jul 15 15:22:01 2021
+# [ok]
