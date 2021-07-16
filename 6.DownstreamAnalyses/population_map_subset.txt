@@ -1,0 +1,13 @@
+Ugibba_bladder_Sample1_subset	bladder
+Ugibba_rhizoid_Sample1_subset	rhizoid
+Ugibba_stem_Sample2_subset	stem
+Ugibba_leaf_Sample3_subset	leaf
+Ugibba_bladder_Sample3_subset	bladder
+Ugibba_stem_Sample3_subset	stem
+Ugibba_rhizoid_Sample3_subset	rhizoid
+Ugibba_leaf_Sample1_subset	leaf
+Ugibba_stem_Sample1_subset	stem
+Ugibba_leaf_Sample2_subset	leaf
+Ugibba_rhizoid_Sample2_subset	rhizoid
+Ugibba_shootstraps_subset	pool
+Ugibba_vegetative_subset	pool
