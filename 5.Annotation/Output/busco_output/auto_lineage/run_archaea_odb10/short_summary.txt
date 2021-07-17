@@ -1,0 +1,14 @@
+# BUSCO version is: 5.0.0 
+# The lineage dataset is: archaea_odb10 (Creation date: 2021-02-23, number of species: 404, number of BUSCOs: 194)
+# Summarized benchmarking in BUSCO notation for file /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.aa
+# BUSCO was run in mode: proteins
+
+	***** Results: *****
+
+	C:17.0%[S:15.5%,D:1.5%],F:0.5%,M:82.5%,n:194	   
+	33	Complete BUSCOs (C)			   
+	30	Complete and single-copy BUSCOs (S)	   
+	3	Complete and duplicated BUSCOs (D)	   
+	1	Fragmented BUSCOs (F)			   
+	160	Missing BUSCOs (M)			   
+	194	Total BUSCO groups searched		   

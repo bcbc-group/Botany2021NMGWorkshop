@@ -1,0 +1,17 @@
+gene 5006 transcr. 1 in sequence contig_15_619977-623154: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene 5667 transcr. 1 in sequence contig_15_1464845-1469702: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene 5848 transcr. 1 in sequence contig_15_1765426-1767731: Initial exon has length < 3!
+gene 1812 transcr. 1 in sequence contig_15_4039672-4044007: Initial exon has length < 3!
+gene 1887 transcr. 1 in sequence contig_15_4235774-4239528: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene 2183 transcr. 1 in sequence contig_15_4860380-4869371: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene 2217 transcr. 1 in sequence contig_15_4925229-4931226: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene 2232 transcr. 1 in sequence contig_15_4969981-4975840: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene 6882 transcr. 1 in sequence contig_15_5021185-5024472: coding length not a multiple of 3. Skipping...
+gene 2459 transcr. 1 in sequence contig_15_5405292-5411342: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene 7464 transcr. 1 in sequence contig_15_5978624-5981594: Initial exon does not begin with start codon but with aga
+gene 3047 transcr. 1 in sequence contig_15_6273962-6276895: Initial exon does not begin with start codon but with att
+gene 7665 transcr. 1 in sequence contig_15_6286873-6289240: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene 3164 transcr. 1 in sequence contig_15_6527517-6529913: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene 8122 transcr. 1 in sequence contig_15_6917087-6922911: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene 3450 transcr. 1 in sequence contig_15_6922912-6925763: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene 3567 transcr. 1 in sequence contig_15_7081701-7085112: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?

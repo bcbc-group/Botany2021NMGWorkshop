@@ -1,0 +1,322 @@
+#**********************************************************************************
+#                               BRAKER CONFIGURATION                               
+#**********************************************************************************
+# BRAKER CALL: /home/FCAM/bshrestha/BRAKER_2.1.5/scripts/braker.pl --cores 8 --genome=/labs/Wegrzyn/bikash/botany2021/contig_15_masked.fasta --species=botany2021 --bam=/labs/Wegrzyn/bikash/botany2021/SRR5046448_contig15.sort.bam --softmasking 1 --gff3
+# Wed Jul 14 21:26:20 2021: braker.pl version 2.1.5
+# Wed Jul 14 21:26:20 2021: Configuring of BRAKER for using external tools...
+# Wed Jul 14 21:26:20 2021: Found environment variable $AUGUSTUS_CONFIG_PATH. Setting $AUGUSTUS_CONFIG_PATH to /home/FCAM/bshrestha/Augustus/config
+# Wed Jul 14 21:26:20 2021: Found environment variable $AUGUSTUS_BIN_PATH. Setting $AUGUSTUS_BIN_PATH to /home/FCAM/bshrestha/Augustus/bin
+# Wed Jul 14 21:26:20 2021: Did not find environment variable $AUGUSTUS_SCRIPTS_PATH (either variable does not exist, or the path given in variable does not exist). Will try to set this variable in a different way, later.
+# Wed Jul 14 21:26:20 2021: Trying to guess $AUGUSTUS_SCRIPTS_PATH from $AUGUSTUS_CONFIG_PATH.
+# Wed Jul 14 21:26:20 2021: Setting $AUGUSTUS_SCRIPTS_PATH to /home/FCAM/bshrestha/Augustus/config/../scripts
+# Wed Jul 14 21:26:20 2021: Did not find environment variable $PYTHON3_PATH
+# Wed Jul 14 21:26:20 2021: Trying to guess $PYTHON3_PATH from location of python3 executable that is available in your $PATH
+# Wed Jul 14 21:26:20 2021: Setting $PYTHON3_PATH to /isg/shared/apps/python/3.6.3/bin
+# Wed Jul 14 21:26:20 2021: Found environment variable $GENEMARK_PATH. Setting $GENEMARK_PATH to /home/FCAM/bshrestha/gmes_linux_64
+# Wed Jul 14 21:26:20 2021: Found environment variable $BAMTOOLS_PATH. Setting $BAMTOOLS_PATH to /isg/shared/apps/bamtools/2.5.1/bin
+# Wed Jul 14 21:26:20 2021: Found environment variable $SAMTOOLS_PATH. Setting $SAMTOOLS_PATH to /isg/shared/apps/samtools/1.9/bin
+# Wed Jul 14 21:26:20 2021: Did not find environment variable $DIAMOND_PATH
+# Wed Jul 14 21:26:20 2021: Trying to guess $DIAMOND_PATH from location of diamond executable that is available in your $PATH
+#*********
+# WARNING: Guessing the location of $DIAMOND_PATH failed / BRAKER failed  to detect a diamond binary with "which diamond"!
+#*********
+# Wed Jul 14 21:26:20 2021: Found environment variable $BLAST_PATH. Setting $BLAST_PATH to /isg/shared/apps/blast/ncbi-blast-2.10.0+/bin
+# Wed Jul 14 21:26:20 2021: Found environment variable $CDBTOOLS_PATH. Setting $CDBTOOLS_PATH to /home/FCAM/bshrestha/cdbfasta
+#**********************************************************************************
+#                               CREATING DIRECTORY STRUCTURE                       
+#**********************************************************************************
+# Wed Jul 14 21:26:20 2021: create working directory /labs/Wegrzyn/bikash/botany2021/braker/braker.
+mkdir /labs/Wegrzyn/bikash/botany2021/braker/braker
+# Wed Jul 14 21:26:20 2021: creating file that contains citations for this BRAKER run at /labs/Wegrzyn/bikash/botany2021/braker/braker/what-to-cite.txt...
+# Wed Jul 14 21:26:20 2021: create working directory /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET.
+mkdir /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET
+# Wed Jul 14 21:26:20 2021: create working directory /labs/Wegrzyn/bikash/botany2021/braker/braker/species
+mkdir /labs/Wegrzyn/bikash/botany2021/braker/braker/species
+# Wed Jul 14 21:26:20 2021: create working directory /labs/Wegrzyn/bikash/botany2021/braker/braker/errors
+mkdir /labs/Wegrzyn/bikash/botany2021/braker/braker/errors
+# Wed Jul 14 21:26:21 2021: changing into working directory /labs/Wegrzyn/bikash/botany2021/braker/braker
+cd /labs/Wegrzyn/bikash/botany2021/braker/braker
+# Wed Jul 14 21:26:21 2021: Creating parameter template files for AUGUSTUS with new_species.pl
+# Wed Jul 14 21:26:21 2021: new_species.pl will create parameter files for species botany2021 in /home/FCAM/bshrestha/Augustus/config/species/botany2021
+perl /home/FCAM/bshrestha/Augustus/scripts/new_species.pl --species=botany2021 --AUGUSTUS_CONFIG_PATH=/home/FCAM/bshrestha/Augustus/config 1> /dev/null 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/new_species.stderr
+# Wed Jul 14 21:26:21 2021: check_fasta_headers(): Checking fasta headers of file /labs/Wegrzyn/bikash/botany2021/contig_15_masked.fasta
+#**********************************************************************************
+#                               PROCESSING HINTS                                   
+#**********************************************************************************
+# Wed Jul 14 21:26:22 2021: Converting bam files to hints
+# Wed Jul 14 21:26:22 2021: Checking bam headers
+# Wed Jul 14 21:26:22 2021: create header file /labs/Wegrzyn/bikash/botany2021/braker/braker/SRR5046448_contig15_header.sam
+/isg/shared/apps/bamtools/2.5.1/bin/bamtools header -in /labs/Wegrzyn/bikash/botany2021/SRR5046448_contig15.sort.bam > /labs/Wegrzyn/bikash/botany2021/braker/braker/SRR5046448_contig15_header.sam
+# Wed Jul 14 21:26:23 2021: Deleting SAM header file /labs/Wegrzyn/bikash/botany2021/braker/braker/SRR5046448_contig15_header.sam (will not be needed from here on)
+# Wed Jul 14 21:26:23 2021: Deleting /labs/Wegrzyn/bikash/botany2021/braker/braker/SRR5046448_contig15_new_header.sam
+# Wed Jul 14 21:26:23 2021: make hints from BAM file /labs/Wegrzyn/bikash/botany2021/SRR5046448_contig15.sort.bam
+/home/FCAM/bshrestha/Augustus/bin/bam2hints --intronsonly --in=/labs/Wegrzyn/bikash/botany2021/SRR5046448_contig15.sort.bam --out=/labs/Wegrzyn/bikash/botany2021/braker/braker/bam2hints.temp.0.gff 1> /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/bam2hints.0.stdout 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/bam2hints.0.stderr
+# Wed Jul 14 21:27:23 2021: add hints from BAM file /labs/Wegrzyn/bikash/botany2021/SRR5046448_contig15.sort.bam to hints file
+cat /labs/Wegrzyn/bikash/botany2021/braker/braker/bam2hints.temp.0.gff >>/labs/Wegrzyn/bikash/botany2021/braker/braker/hintsfile.temp.gff
+# Wed Jul 14 21:27:23 2021: Checking for hints of src=C and with grp tags that should not be joined according to multiplicity
+# Wed Jul 14 21:27:23 2021: Joining hints that are identical (& from the same source) into multiplicity hints (input file /labs/Wegrzyn/bikash/botany2021/braker/braker/tmp_merge_hints.gff)
+# Wed Jul 14 21:27:23 2021: sort hints of type rnaseq
+cat /labs/Wegrzyn/bikash/botany2021/braker/braker/tmp_merge_hints.gff | sort -n -k 4,4 | sort -s -n -k 5,5 | sort -s -n -k 3,3 | sort -s -k 1,1 >/labs/Wegrzyn/bikash/botany2021/braker/braker/hints.rnaseq.temp.sort.gff
+# Wed Jul 14 21:27:23 2021: join multiple hints
+perl /home/FCAM/bshrestha/Augustus/scripts/join_mult_hints.pl </labs/Wegrzyn/bikash/botany2021/braker/braker/hints.rnaseq.temp.sort.gff >/labs/Wegrzyn/bikash/botany2021/braker/braker/tmp_merge_hints.gff 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/join_mult_hints.rnaseq.stderr
+mv /labs/Wegrzyn/bikash/botany2021/braker/braker/tmp_merge_hints.gff /labs/Wegrzyn/bikash/botany2021/braker/braker/hintsfile.temp.gff
+# Wed Jul 14 21:27:23 2021: filter introns, find strand and change score to 'mult' entry
+perl /home/FCAM/bshrestha/BRAKER_2.1.5/scripts/filterIntronsFindStrand.pl /labs/Wegrzyn/bikash/botany2021/braker/braker/genome.fa /labs/Wegrzyn/bikash/botany2021/braker/braker/hintsfile.temp.gff --score 1>>/labs/Wegrzyn/bikash/botany2021/braker/braker/hintsfile.gff 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/filterIntronsFindStrand.stderr
+# Wed Jul 14 21:27:24 2021: rm /labs/Wegrzyn/bikash/botany2021/braker/braker/hintsfile.temp.gff
+# Wed Jul 14 21:27:24 2021: Preparing hints for running GeneMark
+# Wed Jul 14 21:27:24 2021: Filtering intron hints for GeneMark from /labs/Wegrzyn/bikash/botany2021/braker/braker/hintsfile.gff...
+cat /labs/Wegrzyn/bikash/botany2021/braker/braker/genemark_hintsfile.gff.rnaseq | sort -n -k 4,4 | sort -s -n -k 5,5 | sort -s -k 3,3 | sort -s -k 1,1 | /home/FCAM/bshrestha/Augustus/scripts/join_mult_hints.pl > /labs/Wegrzyn/bikash/botany2021/braker/braker/genemark_hintsfile.gff.rnaseq.tmp
+mv /labs/Wegrzyn/bikash/botany2021/braker/braker/genemark_hintsfile.gff.rnaseq.tmp /labs/Wegrzyn/bikash/botany2021/braker/braker/genemark_hintsfile.gff
+#**********************************************************************************
+#                              RUNNING GENEMARK-EX                                 
+#**********************************************************************************
+# Wed Jul 14 21:27:24 2021: Checking whether file /labs/Wegrzyn/bikash/botany2021/braker/braker/genemark_hintsfile.gff contains sufficient multiplicity information...
+# Wed Jul 14 21:27:24 2021: Executing GeneMark-ET
+# Wed Jul 14 21:27:24 2021: changing into GeneMark-ET directory /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET
+cd /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET
+# Wed Jul 14 21:27:24 2021: Executing gmes_petap.pl
+perl /home/FCAM/bshrestha/gmes_linux_64/gmes_petap.pl --verbose --sequence=/labs/Wegrzyn/bikash/botany2021/braker/braker/genome.fa --ET=/labs/Wegrzyn/bikash/botany2021/braker/braker/genemark_hintsfile.gff --et_score 10 --max_intergenic 50000 --cores=8 --gc_donor 0.001 --soft_mask auto 1>/labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET.stdout 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/GeneMark-ET.stderr
+# Wed Jul 14 22:06:21 2021: change to working directory /labs/Wegrzyn/bikash/botany2021/braker/braker
+cd /labs/Wegrzyn/bikash/botany2021/braker/braker
+# Wed Jul 14 22:06:21 2021: Filtering output of GeneMark for generating training genes for AUGUSTUS
+# Wed Jul 14 22:06:21 2021: Checking whether hintsfile contains single exon CDSpart hints or start/stop hints
+# Wed Jul 14 22:06:21 2021: filtering GeneMark genes by intron hints
+perl /home/FCAM/bshrestha/BRAKER_2.1.5/scripts/filterGenemark.pl --genemark=/labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/genemark.gtf --hints=/labs/Wegrzyn/bikash/botany2021/braker/braker/hintsfile.gff --randomSeed=1 1>/labs/Wegrzyn/bikash/botany2021/braker/braker/filterGenemark.stdout 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/filterGenemark.stderr
+# Wed Jul 14 22:06:22 2021: Ensuring at least 4000 genes in training file 
+/isg/shared/apps/python/3.6.3/bin/python3 /home/FCAM/bshrestha/BRAKER_2.1.5/scripts/ensure_n_training_genes.py --goodGenes /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/genemark.f.good.gtf --badGenes /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/genemark.f.bad.gtf --N 4000 --randomSeed 1 1>/labs/Wegrzyn/bikash/botany2021/braker/braker/ensure_min_n_training_genes.stdout 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/ensure_min_n_training_genes.stderr
+#Wed Jul 14 22:06:22 2021: downsampling good genemark genes according to poisson distribution with Lambda 2:
+perl /home/FCAM/bshrestha/BRAKER_2.1.5/scripts/downsample_traingenes.pl --in_gtf=/labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/genemark.f.good.gtf --out_gtf=/labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/genemark.d.gtf --lambda=2 1> /labs/Wegrzyn/bikash/botany2021/braker/braker/downsample_traingenes.log 2> /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/downsample_traingenes.err
+#**********************************************************************************
+#                               TRAIN AUGUSTUS                                     
+#**********************************************************************************
+# Wed Jul 14 22:06:23 2021: training AUGUSTUS
+# Wed Jul 14 22:06:23 2021: creating softlink from /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/genemark.gtf to /labs/Wegrzyn/bikash/botany2021/braker/braker/traingenes.gtf.
+ln -s /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/genemark.gtf /labs/Wegrzyn/bikash/botany2021/braker/braker/traingenes.gtf
+# Wed Jul 14 22:06:23 2021: Converting gtf file /labs/Wegrzyn/bikash/botany2021/braker/braker/traingenes.gtf to genbank file
+# Wed Jul 14 22:06:23 2021: Computing flanking region size for AUGUSTUS training genes
+# Wed Jul 14 22:06:23 2021: create genbank file /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb
+perl /home/FCAM/bshrestha/Augustus/scripts/gff2gbSmallDNA.pl /labs/Wegrzyn/bikash/botany2021/braker/braker/traingenes.gtf /labs/Wegrzyn/bikash/botany2021/braker/braker/genome.fa 1145 /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/traingenes.gtf_gff2gbSmallDNA.stderr
+#*********
+# INFORMATION: the size of flanking region used in this BRAKER run is 1145. You might need this value if you later add a UTR training on top of an already existing BRAKER run.
+#*********
+# Wed Jul 14 22:06:27 2021: Genbank format file /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb contains 2181 genes.
+#  Wed Jul 14 22:06:27 2021: concatenating good and downsampled GeneMark training genes to /labs/Wegrzyn/bikash/botany2021/braker/braker/good_genes.lst.
+cat /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/genemark.d.gtf > /labs/Wegrzyn/bikash/botany2021/braker/braker/good_genes.lst
+# Wed Jul 14 22:06:28 2021: Filtering train.gb for "good" mRNAs:
+perl /home/FCAM/bshrestha/Augustus/scripts/filterGenesIn_mRNAname.pl /labs/Wegrzyn/bikash/botany2021/braker/braker/good_genes.lst /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb > /labs/Wegrzyn/bikash/botany2021/braker/braker/train.f.gb 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/filterGenesIn_mRNAname.stderr
+# Wed Jul 14 22:06:28 2021: Genbank format file /labs/Wegrzyn/bikash/botany2021/braker/braker/train.f.gb contains 1622 genes.
+# Wed Jul 14 22:06:28 2021: Running etraining to catch gene structure inconsistencies:
+/home/FCAM/bshrestha/Augustus/bin/etraining --species=botany2021 --AUGUSTUS_CONFIG_PATH=/home/FCAM/bshrestha/Augustus/config /labs/Wegrzyn/bikash/botany2021/braker/braker/train.f.gb 1> /labs/Wegrzyn/bikash/botany2021/braker/braker/gbFilterEtraining.stdout 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/gbFilterEtraining.stderr
+# Wed Jul 14 22:06:30 2021: Filtering /labs/Wegrzyn/bikash/botany2021/braker/braker/train.f.gb file to remove inconsistent gene structures...
+perl /home/FCAM/bshrestha/Augustus/scripts/filterGenes.pl /labs/Wegrzyn/bikash/botany2021/braker/braker/etrain.bad.lst /labs/Wegrzyn/bikash/botany2021/braker/braker/train.f.gb 1> /labs/Wegrzyn/bikash/botany2021/braker/braker/train.ff.gb 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/etrainFilterGenes.stderr
+# Wed Jul 14 22:06:30 2021: Genbank format file /labs/Wegrzyn/bikash/botany2021/braker/braker/train.ff.gb contains 1615 genes.
+# Wed Jul 14 22:06:32 2021: BLAST or DIAMOND training gene structures against themselves:
+perl /home/FCAM/bshrestha/Augustus/scripts/aa2nonred.pl /labs/Wegrzyn/bikash/botany2021/braker/braker/traingenes.good.fa /labs/Wegrzyn/bikash/botany2021/braker/braker/traingenes.good.nr.fa --BLAST_PATH=/isg/shared/apps/blast/ncbi-blast-2.10.0+/bin --cores=8 1> /labs/Wegrzyn/bikash/botany2021/braker/braker/aa2nonred.stdout 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/aa2nonred.stderr
+# Wed Jul 14 22:06:54 2021: Filtering nonredundant loci into /labs/Wegrzyn/bikash/botany2021/braker/braker/train.fff.gb:
+perl /home/FCAM/bshrestha/Augustus/scripts/filterGenesIn.pl /labs/Wegrzyn/bikash/botany2021/braker/braker/nonred.loci.lst /labs/Wegrzyn/bikash/botany2021/braker/braker/train.ff.gb 1> /labs/Wegrzyn/bikash/botany2021/braker/braker/train.fff.gb 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/filterGenesIn.stderr
+# Wed Jul 14 22:06:55 2021: Genbank format file /labs/Wegrzyn/bikash/botany2021/braker/braker/train.fff.gb contains 1601 genes.
+# Wed Jul 14 22:06:55 2021: Moving /labs/Wegrzyn/bikash/botany2021/braker/braker/train.fff.gb to /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb:
+mv /labs/Wegrzyn/bikash/botany2021/braker/braker/train.fff.gb /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb
+# Wed Jul 14 22:06:55 2021: Splitting genbank file into train and test file
+perl /home/FCAM/bshrestha/Augustus/scripts/randomSplit.pl /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb 300 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/randomSplit.stderr
+# Wed Jul 14 22:06:55 2021: /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.test will be used for measuring AUGUSTUS accuracy after training
+# Wed Jul 14 22:06:55 2021: Genbank format file /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.test contains 300 genes.
+# Wed Jul 14 22:06:55 2021: Genbank format file /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.train contains 1301 genes.
+perl /home/FCAM/bshrestha/Augustus/scripts/randomSplit.pl /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.train 300 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/randomSplit.stderr
+# Wed Jul 14 22:06:55 2021: Genbank format file /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.train.train contains 1001 genes.
+# Wed Jul 14 22:06:55 2021: Genbank format file /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.train.test contains 300 genes.
+# Wed Jul 14 22:06:55 2021: /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.train.test will be used or measuring AUGUSTUS accuracy during training with optimize_augustus.pl
+ /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.train.train will be used for running etraining in optimize_augustus.pl (together with train.gb.train.test)
+ /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.train will be used for running etraining (outside of optimize_augustus.pl)
+# Wed Jul 14 22:06:55 2021: Setting value of "stopCodonExcludedFromCDS" in /home/FCAM/bshrestha/Augustus/config/species/botany2021/botany2021_parameters.cfg to "true"
+# Wed Jul 14 22:06:55 2021: first etraining
+/home/FCAM/bshrestha/Augustus/bin/etraining --species=botany2021 --AUGUSTUS_CONFIG_PATH=/home/FCAM/bshrestha/Augustus/config /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.train 1>/labs/Wegrzyn/bikash/botany2021/braker/braker/firstetraining.stdout 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/firstetraining.stderr
+grep -c "exon doesn't end in stop codon" /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/firstetraining.stderr
+# Wed Jul 14 22:06:56 2021: Error rate of missing stop codon is 0.956187548039969
+# Wed Jul 14 22:06:56 2021: The appropriate value for "stopCodonExcludedFromCDS" seems to be "false".
+# Wed Jul 14 22:06:56 2021: Setting value of "stopCodonExcludedFromCDS" in /home/FCAM/bshrestha/Augustus/config/species/botany2021/botany2021_parameters.cfg to "false"
+# Wed Jul 14 22:06:56 2021: Running etraining again
+/home/FCAM/bshrestha/Augustus/bin/etraining --species=botany2021 --AUGUSTUS_CONFIG_PATH=/home/FCAM/bshrestha/Augustus/config /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.train 1>/labs/Wegrzyn/bikash/botany2021/braker/braker/firstetraining.stdout 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/firstetraining.stderr
+# Wed Jul 14 22:06:58 2021: Adjusting stop-codon frequencies in species_parameters.cfg according to /labs/Wegrzyn/bikash/botany2021/braker/braker/firstetraining.stdout
+# Wed Jul 14 22:06:58 2021: Setting frequency of stop codons to tag=0.278, taa=0.246, tga=0.476.
+# Wed Jul 14 22:06:58 2021: First AUGUSTUS accuracy test
+/home/FCAM/bshrestha/Augustus/bin/augustus --species=botany2021 --AUGUSTUS_CONFIG_PATH=/home/FCAM/bshrestha/Augustus/config /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.test 1>/labs/Wegrzyn/bikash/botany2021/braker/braker/firsttest.stdout 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/firsttest.stderr
+# Wed Jul 14 22:08:13 2021: Computing accuracy of AUGUSTUS prediction (in test file derived from predictions on training data set stored in /labs/Wegrzyn/bikash/botany2021/braker/braker/firsttest.stdout)
+# Wed Jul 14 22:08:13 2021: The accuracy after initial training (no optimize_augustus.pl, no CRF) is 0.676933333333333
+# Wed Jul 14 22:08:13 2021: optimizing AUGUSTUS parameters
+perl /home/FCAM/bshrestha/Augustus/scripts/optimize_augustus.pl --aug_exec_dir=/home/FCAM/bshrestha/Augustus/bin --rounds=5 --species=botany2021 --kfold=8 --AUGUSTUS_CONFIG_PATH=/home/FCAM/bshrestha/Augustus/config --onlytrain=/labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.train.train --cpus=8 /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.train.test 1>/labs/Wegrzyn/bikash/botany2021/braker/braker/optimize_augustus.stdout 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/optimize_augustus.stderr
+# Thu Jul 15 01:00:01 2021:  parameter optimization finished.
+# Thu Jul 15 01:00:01 2021: Second etraining
+/home/FCAM/bshrestha/Augustus/bin/etraining --species=botany2021 --AUGUSTUS_CONFIG_PATH=/home/FCAM/bshrestha/Augustus/config /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.train 1>/labs/Wegrzyn/bikash/botany2021/braker/braker/secondetraining.stdout 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/secondetraining.stderr
+# Thu Jul 15 01:00:02 2021: Second AUGUSTUS accuracy test
+/home/FCAM/bshrestha/Augustus/bin/augustus --species=botany2021 --AUGUSTUS_CONFIG_PATH=/home/FCAM/bshrestha/Augustus/config /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.test >/labs/Wegrzyn/bikash/botany2021/braker/braker/secondtest.stdout 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/secondtest.stderr
+# Thu Jul 15 01:01:40 2021: Computing accuracy of AUGUSTUS prediction (in test file derived from predictions on training data set stored in /labs/Wegrzyn/bikash/botany2021/braker/braker/secondtest.stdout)
+# Thu Jul 15 01:01:40 2021: The accuracy after training (after optimize_augustus.pl, no CRF) is 0.711933333333333
+# Thu Jul 15 01:01:40 2021: Copying optimized parameters to working directory /labs/Wegrzyn/bikash/botany2021/braker/braker/species
+cp -r /home/FCAM/bshrestha/Augustus/config/species/botany2021 /labs/Wegrzyn/bikash/botany2021/braker/braker/species
+#**********************************************************************************
+#                               PREDICTING GENES WITH AUGUSTUS (NO UTRS)           
+#**********************************************************************************
+# Thu Jul 15 01:01:40 2021: RUNNING AUGUSTUS
+# Thu Jul 15 01:01:40 2021: Preparing genome for running AUGUSTUS in parallel
+# Thu Jul 15 01:01:40 2021: Creating directory for storing AUGUSTUS files (hints, temporarily) /labs/Wegrzyn/bikash/botany2021/braker/braker/genome_split.
+# Thu Jul 15 01:01:40 2021: splitting genome file in smaller parts for parallel execution of AUGUSTUS prediction
+perl /home/FCAM/bshrestha/Augustus/scripts/splitMfasta.pl /labs/Wegrzyn/bikash/botany2021/braker/braker/genome.fa --outputpath=/labs/Wegrzyn/bikash/botany2021/braker/braker/genome_split 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/splitMfasta.stderr
+cd /labs/Wegrzyn/bikash/botany2021/braker/braker/genome_split; for f in genome.split.*; do NAME=`grep ">" $f`; mv $f ${NAME#>}.fa; done; cd ..
+# Thu Jul 15 01:01:41 2021: Split genome file in 1 parts, finished.
+# Thu Jul 15 01:01:41 2021: copy extrinsic file /home/FCAM/bshrestha/BRAKER_2.1.5/scripts/cfg/rnaseq.cfg to working directory
+cp /home/FCAM/bshrestha/BRAKER_2.1.5/scripts/cfg/rnaseq.cfg /labs/Wegrzyn/bikash/botany2021/braker/braker/species/botany2021/ex1.cfg
+# Thu Jul 15 01:01:41 2021: Making AUGUSTUS jobs with hintsfile /labs/Wegrzyn/bikash/botany2021/braker/braker/hintsfile.gff, cfgFile /home/FCAM/bshrestha/BRAKER_2.1.5/scripts/cfg/rnaseq.cfg, UTR status off, and hintId hints
+# Thu Jul 15 01:01:41 2021: Creating directory for storing AUGUSTUS files (hints, temporarily) /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus_tmp.
+# Thu Jul 15 01:01:41 2021: creating /labs/Wegrzyn/bikash/botany2021/braker/braker/aug_hints.lst for AUGUSTUS jobs
+# Thu Jul 15 01:01:41 2021: creating AUGUSTUS jobs (with hints)
+cd /labs/Wegrzyn/bikash/botany2021/braker/braker
+perl /home/FCAM/bshrestha/Augustus/scripts/createAugustusJoblist.pl --sequences=/labs/Wegrzyn/bikash/botany2021/braker/braker/aug_hints.lst --wrap="#!/bin/bash" --overlap=5000 --chunksize=1252500 --outputdir=/labs/Wegrzyn/bikash/botany2021/braker/braker/augustus_tmp --joblist=/labs/Wegrzyn/bikash/botany2021/braker/braker/hints.job.lst --jobprefix=aug_hints_ --partitionHints --command "/home/FCAM/bshrestha/Augustus/bin/augustus --species=botany2021 --AUGUSTUS_CONFIG_PATH=/home/FCAM/bshrestha/Augustus/config --extrinsicCfgFile=/home/FCAM/bshrestha/BRAKER_2.1.5/scripts/cfg/rnaseq.cfg --alternatives-from-evidence=true --UTR=off --exonnames=on --codingseq=on --allow_hinted_splicesites=gcag,atac  --softmasking=1" 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/createAugustusJoblist_hints.stderr
+cd ..
+# Thu Jul 15 01:01:41 2021: Running AUGUSTUS jobs from /labs/Wegrzyn/bikash/botany2021/braker/braker/hints.job.lst
+# Thu Jul 15 01:01:41 2021: Running AUGUSTUS job 1
+/labs/Wegrzyn/bikash/botany2021/braker/braker/aug_hints_1
+# Thu Jul 15 01:01:41 2021: Running AUGUSTUS job 2
+/labs/Wegrzyn/bikash/botany2021/braker/braker/aug_hints_2
+# Thu Jul 15 01:01:41 2021: Running AUGUSTUS job 3
+/labs/Wegrzyn/bikash/botany2021/braker/braker/aug_hints_3
+# Thu Jul 15 01:01:41 2021: Running AUGUSTUS job 4
+/labs/Wegrzyn/bikash/botany2021/braker/braker/aug_hints_4
+# Thu Jul 15 01:01:41 2021: Running AUGUSTUS job 5
+/labs/Wegrzyn/bikash/botany2021/braker/braker/aug_hints_5
+# Thu Jul 15 01:01:41 2021: Running AUGUSTUS job 6
+/labs/Wegrzyn/bikash/botany2021/braker/braker/aug_hints_6
+# Thu Jul 15 01:01:41 2021: Running AUGUSTUS job 7
+/labs/Wegrzyn/bikash/botany2021/braker/braker/aug_hints_7
+# Thu Jul 15 01:18:28 2021: Joining AUGUSTUS predictions in directory /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus_tmp
+# Thu Jul 15 01:18:28 2021: Concatenating AUGUSTUS output files in /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus_tmp
+cat /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus_tmp/1.001.contig_15.fa.1..1252500.gff >> /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.tmp1.gff
+cat /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus_tmp/1.002.contig_15.fa.1247501..2500000.gff >> /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.tmp1.gff
+cat /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus_tmp/1.003.contig_15.fa.2495001..3747500.gff >> /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.tmp1.gff
+cat /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus_tmp/1.004.contig_15.fa.3742501..4995000.gff >> /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.tmp1.gff
+cat /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus_tmp/1.005.contig_15.fa.4990001..6242500.gff >> /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.tmp1.gff
+cat /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus_tmp/1.006.contig_15.fa.6237501..7490000.gff >> /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.tmp1.gff
+cat /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus_tmp/1.007.contig_15.fa.7485001..8514217.gff >> /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.tmp1.gff
+perl /home/FCAM/bshrestha/Augustus/scripts/join_aug_pred.pl < /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.tmp1.gff > /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.gff
+# Thu Jul 15 01:18:30 2021: Deleting /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus_tmp
+# Thu Jul 15 01:18:30 2021: Deleting /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.tmp1.gff
+# Thu Jul 15 01:18:30 2021: Making a gtf file from /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.gff
+cat /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.gff | perl -ne 'if(m/\tAUGUSTUS\t/) {print $_;}' | perl /home/FCAM/bshrestha/Augustus/scripts/gtf2gff.pl --printExon --out=/labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.tmp.gtf 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/gtf2gff.augustus.hints.gtf.stderr
+# Thu Jul 15 01:18:32 2021: Making a fasta file with protein sequences of /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.gtf
+/isg/shared/apps/python/3.6.3/bin/python3 /home/FCAM/bshrestha/Augustus/scripts/getAnnoFastaFromJoingenes.py -g /labs/Wegrzyn/bikash/botany2021/braker/braker/genome.fa -f /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.gtf -o /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints 1> /labs/Wegrzyn/bikash/botany2021/braker/braker/getAnnoFastaFromJoingenes.augustus.hints_tmp.stdout 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/getAnnoFastaFromJoingenes.augustus.hints_tmp.stderr
+# Thu Jul 15 01:18:39 2021: fixing AUGUSTUS genes with in frame stop codons...
+/isg/shared/apps/python/3.6.3/bin/python3 /home/FCAM/bshrestha/Augustus/scripts/fix_in_frame_stop_codon_genes.py -g /labs/Wegrzyn/bikash/botany2021/braker/braker/genome.fa -t /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.gtf -b /labs/Wegrzyn/bikash/botany2021/braker/braker/bad_genes.lst -o augustus.hints_fix_ifs_ -s botany2021 -m on --UTR off --print_utr off -a /home/FCAM/bshrestha/Augustus/config -C /home/FCAM/bshrestha/cdbfasta -A /home/FCAM/bshrestha/Augustus/bin -S /home/FCAM/bshrestha/Augustus/config/../scripts -H /labs/Wegrzyn/bikash/botany2021/braker/braker/hintsfile.gff -e /home/FCAM/bshrestha/BRAKER_2.1.5/scripts/cfg/rnaseq.cfg  > /labs/Wegrzyn/bikash/botany2021/braker/braker/fix_in_frame_stop_codon_genes_augustus.hints.log 2> /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/fix_in_frame_stop_codon_genes_augustus.hints.err
+# Thu Jul 15 01:18:45 2021: Moving gene prediction file without in frame stop codons to location of original file (overwriting it)...
+mv /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints_fix_ifs_.gtf /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.gtf
+# Thu Jul 15 01:18:45 2021: Deleting file with genes with in frame stop codons...
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/bad_genes.lst
+# Thu Jul 15 01:18:45 2021: Making a fasta file with protein sequences of /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.gtf
+/isg/shared/apps/python/3.6.3/bin/python3 /home/FCAM/bshrestha/Augustus/scripts/getAnnoFastaFromJoingenes.py -g /labs/Wegrzyn/bikash/botany2021/braker/braker/genome.fa -f /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.gtf -o /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints 1> /labs/Wegrzyn/bikash/botany2021/braker/braker/getAnnoFastaFromJoingenes.augustus.hints_hints.stdout 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/getAnnoFastaFromJoingenes.augustus.hints_hints.stderr
+# Thu Jul 15 01:18:51 2021: deleting files from AUGUSTUS parallelization
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/aug_hints_5
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/aug_hints_1
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/aug_hints_2
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/aug_hints_6
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/aug_hints_7
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/aug_hints_4
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/aug_hints_3
+# Thu Jul 15 01:18:51 2021: AUGUSTUS prediction complete
+# Thu Jul 15 01:18:51 2021: Trying to create merged gene set from GeneMark-EX and AUGUSTUS predictions (braker.gtf/braker.utr.gtf)...
+perl /home/FCAM/bshrestha/BRAKER_2.1.5/scripts/merge_transcript_sets.pl /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.gtf /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/genemark.f.multi_anchored.gtf 1> /labs/Wegrzyn/bikash/botany2021/braker/braker/braker.gtf 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/merge_transcripts_multi_anchored.stderr
+mv /labs/Wegrzyn/bikash/botany2021/braker/braker/braker.gtf /labs/Wegrzyn/bikash/botany2021/braker/braker/step2.gtf
+perl /home/FCAM/bshrestha/BRAKER_2.1.5/scripts/merge_transcript_sets.pl /labs/Wegrzyn/bikash/botany2021/braker/braker/step2.gtf /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/genemark.f.single_anchored.gtf 1> /labs/Wegrzyn/bikash/botany2021/braker/braker/braker.gtf 2>/labs/Wegrzyn/bikash/botany2021/braker/braker/errors/merge_transcripts_single_anchored.stderr
+# Thu Jul 15 01:18:56 2021: converting essential output files to gff3 format.
+# Thu Jul 15 01:18:56 2021: converting gtf file /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.gtf to gff3 format , outputfile /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.gff3.
+cat /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.gtf | perl -ne 'if(m/\tAUGUSTUS\t/) {print $_;}' | perl /home/FCAM/bshrestha/Augustus/scripts/gtf2gff.pl --gff3 --out=/labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.gff3 >> /labs/Wegrzyn/bikash/botany2021/braker/braker/gtf2gff3.log 2>> /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/gtf2gff3.err
+# Thu Jul 15 01:18:58 2021: converting gtf file /labs/Wegrzyn/bikash/botany2021/braker/braker/braker.gtf to gff3 format , outputfile /labs/Wegrzyn/bikash/botany2021/braker/braker/braker.gff3.
+cat /labs/Wegrzyn/bikash/botany2021/braker/braker/braker.gtf | perl -ne 'if(m/\tAUGUSTUS\t/) {print $_;}' | perl /home/FCAM/bshrestha/Augustus/scripts/gtf2gff.pl --gff3 --out=/labs/Wegrzyn/bikash/botany2021/braker/braker/braker.gff3 >> /labs/Wegrzyn/bikash/botany2021/braker/braker/gtf2gff3.log 2>> /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/gtf2gff3.err
+# Thu Jul 15 01:18:59 2021: deleting empty files
+# Thu Jul 15 01:18:59 2021: find /labs/Wegrzyn/bikash/botany2021/braker/braker -empty
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/genemark.f.bad.gtf
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/genemark.f.single_anchored.gtf
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/ensure_min_n_training_genes.stdout
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/new_species.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/etrainFilterGenes.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/gtf2gff.augustus.hints.gtf.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/gtf2gff3.err
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/filterGenemark.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/join_mult_hints.rnaseq.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/find_python3_biopython.err
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/find_python3_re.err
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/downsample_traingenes.err
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/getAnnoFastaFromJoingenes.augustus.hints_tmp.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/createAugustusJoblist_hints.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/getAnnoFastaFromJoingenes.augustus.hints_hints.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/optimize_augustus.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/fix_in_frame_stop_codon_genes_augustus.hints.err
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/aa2nonred.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/GeneMark-ET.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/traingenes.gtf_gff2gbSmallDNA.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/firstetraining.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/bam2hints.0.stdout
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/filterIntronsFindStrand.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/filterGenesIn_mRNAname.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/randomSplit.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/secondtest.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/filterGenesIn.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/secondetraining.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/firsttest.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/splitMfasta.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/errors/bam2hints.0.stderr
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/gtf2gff3.log
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/tmp_no_merge_hints.gff
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/singlecds.hints
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/getAnnoFastaFromJoingenes.augustus.hints_hints.stdout
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/fix_in_frame_stop_codon_genes_augustus.hints.log
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/downsample_traingenes.log
+# Thu Jul 15 01:18:59 2021: deleting job lst files (if existing)
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/aa2nonred.stdout
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/good_genes.lst
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/traingenes.good.fa
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/traingenes.good.fa.nonreddb.pot
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/traingenes.good.nr.fa
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.tmp.gtf
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/traingenes.good.fa.nonreddb.pto
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/etrain.bad.lst
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/gbFilterEtraining.stdout
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.train.test
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/hints.job.lst
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/aug_hints.lst
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/fix_IFS_log_suhamnwb
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.train.train
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/traingenes.good.gtf
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/traingenes.good.fa.nonreddb.pos
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.train
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/train.f.gb
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/train.ff.gb
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb.test
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/nonred.loci.lst
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/traingenes.gtf
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/firstetraining.stdout
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/secondetraining.stdout
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/traingenes.good.fa.nonreddb.ptf
+rm /labs/Wegrzyn/bikash/botany2021/braker/braker/traingenes.good.fa.nonreddb.pdb
+perl /home/FCAM/bshrestha/BRAKER_2.1.5/scripts/braker_cleanup.pl --wdir=/labs/Wegrzyn/bikash/botany2021/braker/braker
+Deleting file /labs/Wegrzyn/bikash/botany2021/braker/braker/firsttest.stdout
+Deleting file /labs/Wegrzyn/bikash/botany2021/braker/braker/genome.fa
+Deleting file /labs/Wegrzyn/bikash/botany2021/braker/braker/optimize_augustus.stdout
+Deleting file /labs/Wegrzyn/bikash/botany2021/braker/braker/secondtest.stdout
+Deleting file /labs/Wegrzyn/bikash/botany2021/braker/braker/train.gb
+Deleting file /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/genemark.d.gtf
+Deleting file /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/genemark.f.good.gtf
+Deleting file /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/genemark.c.gtf
+Deleting file /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/genemark.average_gene_length.out
+Deleting file /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/gmes.log
+Deleting file /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/run.cfg
+Deleting file /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET.stdout
+Deleting file /labs/Wegrzyn/bikash/botany2021/braker/braker/filterGenemark.stdout
+Deleting file /labs/Wegrzyn/bikash/botany2021/braker/braker/genome.fa.cidx
+Deleting file /labs/Wegrzyn/bikash/botany2021/braker/braker/getAnnoFastaFromJoingenes.augustus.hints_tmp.stdout
+Deleting file /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.gff
+Deleting directory /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/data
+Deleting directory /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/info
+Deleting directory /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/output
+Deleting directory /labs/Wegrzyn/bikash/botany2021/braker/braker/GeneMark-ET/run
+#**********************************************************************************
+#                               BRAKER RUN FINISHED                                
+#**********************************************************************************

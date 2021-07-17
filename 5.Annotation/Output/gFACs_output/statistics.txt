@@ -1,0 +1,56 @@
+STATS:
+Number of genes:	2194
+Number of monoexonic genes:	322
+Number of multiexonic genes:	1872
+
+Number of positive strand genes:	1133
+Monoexonic:	169
+Multiexonic:	964
+
+Number of negative strand genes:	1061
+Monoexonic:	153
+Multiexonic:	908
+
+Average overall gene size:	7291.103
+Median overall gene size:	1685
+Average overall CDS size:	1340.252
+Median overall CDS size:	1038
+Average overall exon size:	199.967
+Median overall exon size:	119
+
+Average size of monoexonic genes:	765.084
+Median size of monoexonic genes:	561
+Largest monoexonic gene:	3006
+Smallest monoexonic gene:	204
+
+Average size of multiexonic genes:	8413.634
+Median size of multiexonic genes:	1946
+Largest multiexonic gene:	5061989
+Smallest multiexonic gene:	286
+
+Average size of multiexonic CDS:	1439.185
+Median size of multiexonic CDS:	1107
+Largest multiexonic CDS:	11451
+Smallest multiexonic CDS:	201
+
+Average size of multiexonic exons:	187.315
+Median size of multiexonic exons:	117
+Average size of multiexonic introns:	1043.606
+Median size of multiexonic introns:	97
+
+Average number of exons per multiexonic gene:	7.683
+Median number of exons per multiexonic gene:	6
+Largest multiexonic exon:	4939
+Smallest multiexonic exon:	3
+Most exons in one gene:	80
+
+Average number of introns per multiexonic gene:	6.683
+Median number of introns per multiexonic gene:	5
+Largest intron:	5061050
+Smallest intron:	23
+
+The following columns do not involve codons:
+Number of complete models:	2187
+Number of 5' only incomplete models:	6
+Number of 3' only incomplete models:	1
+Number of 5' and 3' incomplete models:	0

@@ -1,0 +1,18 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+g1705.t1             -            309 91428at2             -            555   1.3e-05   20.9   0.0   1   2   0.00017      0.21    7.0   0.0   334   359    92   117    62   148 0.76 -
+g1705.t1             -            309 91428at2             -            555   1.3e-05   20.9   0.0   2   2   8.3e-06     0.011   11.3   0.0   428   462   257   292   161   299 0.89 -
+g1705.t2             -            338 91428at2             -            555   1.7e-05   20.5   0.0   1   3    0.0002      0.25    6.7   0.0   334   359   121   146    92   176 0.76 -
+g1705.t2             -            338 91428at2             -            555   1.7e-05   20.5   0.0   2   3      0.07        88   -1.7   0.0   359   381   196   218   190   228 0.82 -
+g1705.t2             -            338 91428at2             -            555   1.7e-05   20.5   0.0   3   3   1.1e-05     0.014   10.9   0.0   429   462   287   321   235   329 0.86 -
+#
+# Program:         hmmsearch
+# Version:         3.2.1 (June 2018)
+# Pipeline mode:   SEARCH
+# Query file:      /labs/Wegrzyn/bikash/botany2021/braker/busco_downloads/lineages/bacteria_odb10/hmms/91428at2.hmm
+# Target file:     /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.aa
+# Option settings: /isg/shared/apps/hmmer/3.2.1/bin/hmmsearch --domtblout /labs/Wegrzyn/bikash/botany2021/braker/busco_output/auto_lineage/run_bacteria_odb10/hmmer_output/91428at2.out --cpu 1 /labs/Wegrzyn/bikash/botany2021/braker/busco_downloads/lineages/bacteria_odb10/hmms/91428at2.hmm /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.aa 
+# Current dir:     /labs/Wegrzyn/bikash/botany2021/braker
+# Date:            Thu Jul 15 15:21:35 2021
+# [ok]

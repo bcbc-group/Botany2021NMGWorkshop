@@ -1,0 +1,20 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+g136.t2              -           1370 1370304at2759        -            482   2.1e-78  261.4  18.0   1   3   1.7e-45   1.4e-42  143.2   0.0     2   132    24   181    23   212 0.81 -
+g136.t2              -           1370 1370304at2759        -            482   2.1e-78  261.4  18.0   2   3   0.00083      0.69    5.7   0.0   137   158   231   251   215   269 0.74 -
+g136.t2              -           1370 1370304at2759        -            482   2.1e-78  261.4  18.0   3   3   6.4e-34   5.3e-31  105.0  12.9   167   475   309   709   299   713 0.70 -
+g136.t3              -           1380 1370304at2759        -            482   2.2e-78  261.2  18.0   1   3   1.7e-45   1.4e-42  143.2   0.0     2   132    24   181    23   212 0.81 -
+g136.t3              -           1380 1370304at2759        -            482   2.2e-78  261.2  18.0   2   3   0.00083       0.7    5.7   0.0   137   158   231   251   215   269 0.74 -
+g136.t3              -           1380 1370304at2759        -            482   2.2e-78  261.2  18.0   3   3   6.7e-34   5.7e-31  104.9  13.0   167   475   309   709   299   713 0.70 -
+g136.t1              -            261 1370304at2759        -            482   2.3e-44  149.1   0.2   1   1   6.1e-47   5.2e-44  147.9   0.2     2   132    24   181    23   219 0.80 -
+#
+# Program:         hmmsearch
+# Version:         3.2.1 (June 2018)
+# Pipeline mode:   SEARCH
+# Query file:      /labs/Wegrzyn/bikash/botany2021/braker/busco_downloads/lineages/eukaryota_odb10/hmms/1370304at2759.hmm
+# Target file:     /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.aa
+# Option settings: /isg/shared/apps/hmmer/3.2.1/bin/hmmsearch --domtblout /labs/Wegrzyn/bikash/botany2021/braker/busco_output/auto_lineage/run_eukaryota_odb10/hmmer_output/initial_run_results/1370304at2759.out --cpu 1 /labs/Wegrzyn/bikash/botany2021/braker/busco_downloads/lineages/eukaryota_odb10/hmms/1370304at2759.hmm /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.aa 
+# Current dir:     /labs/Wegrzyn/bikash/botany2021/braker
+# Date:            Thu Jul 15 15:21:57 2021
+# [ok]

@@ -1,0 +1,17 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+g1379.t1             -           1378 932854at2            -           1620   8.8e-41  136.5   0.0   1   4   3.8e-06    0.0095   10.5   0.1   571   665   242   337   223   345 0.89 -
+g1379.t1             -           1378 932854at2            -           1620   8.8e-41  136.5   0.0   2   4   1.1e-24   2.8e-21   71.9   0.0   730  1005   380   679   374   686 0.85 -
+g1379.t1             -           1378 932854at2            -           1620   8.8e-41  136.5   0.0   3   4    0.0013       3.2    2.1   0.0  1177  1238   837   903   827   974 0.69 -
+g1379.t1             -           1378 932854at2            -           1620   8.8e-41  136.5   0.0   4   4   6.5e-17   1.6e-13   46.2   0.0  1421  1594  1151  1340  1096  1345 0.72 -
+#
+# Program:         hmmsearch
+# Version:         3.2.1 (June 2018)
+# Pipeline mode:   SEARCH
+# Query file:      /labs/Wegrzyn/bikash/botany2021/braker/busco_downloads/lineages/bacteria_odb10/hmms/932854at2.hmm
+# Target file:     /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.aa
+# Option settings: /isg/shared/apps/hmmer/3.2.1/bin/hmmsearch --domtblout /labs/Wegrzyn/bikash/botany2021/braker/busco_output/auto_lineage/run_bacteria_odb10/hmmer_output/932854at2.out --cpu 1 /labs/Wegrzyn/bikash/botany2021/braker/busco_downloads/lineages/bacteria_odb10/hmms/932854at2.hmm /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.aa 
+# Current dir:     /labs/Wegrzyn/bikash/botany2021/braker
+# Date:            Thu Jul 15 15:21:35 2021
+# [ok]

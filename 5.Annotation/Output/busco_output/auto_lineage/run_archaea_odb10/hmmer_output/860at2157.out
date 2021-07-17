@@ -1,0 +1,18 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+g1379.t1             -           1378 860at2157            -            546   1.8e-30  102.9   0.3   1   5    0.0082        21    0.4   0.0     2    24   290   312   289   329 0.88 -
+g1379.t1             -           1378 860at2157            -            546   1.8e-30  102.9   0.3   2   5   1.3e-12   3.4e-09   32.7   0.1    50   103   380   435   366   439 0.88 -
+g1379.t1             -           1378 860at2157            -            546   1.8e-30  102.9   0.3   3   5   1.3e-20   3.3e-17   59.1   0.0   104   308   456   678   448   710 0.83 -
+g1379.t1             -           1378 860at2157            -            546   1.8e-30  102.9   0.3   4   5     0.024        60   -1.2   0.0   329   450   737   853   728   855 0.73 -
+g1379.t1             -           1378 860at2157            -            546   1.8e-30  102.9   0.3   5   5    0.0009       2.3    3.5   0.0   486   507   950   971   940   982 0.69 -
+#
+# Program:         hmmsearch
+# Version:         3.2.1 (June 2018)
+# Pipeline mode:   SEARCH
+# Query file:      /labs/Wegrzyn/bikash/botany2021/braker/busco_downloads/lineages/archaea_odb10/hmms/860at2157.hmm
+# Target file:     /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.aa
+# Option settings: /isg/shared/apps/hmmer/3.2.1/bin/hmmsearch --domtblout /labs/Wegrzyn/bikash/botany2021/braker/busco_output/auto_lineage/run_archaea_odb10/hmmer_output/860at2157.out --cpu 1 /labs/Wegrzyn/bikash/botany2021/braker/busco_downloads/lineages/archaea_odb10/hmms/860at2157.hmm /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.aa 
+# Current dir:     /labs/Wegrzyn/bikash/botany2021/braker
+# Date:            Thu Jul 15 15:21:21 2021
+# [ok]

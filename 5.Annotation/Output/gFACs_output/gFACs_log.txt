@@ -1,0 +1,312 @@
+gFACs LOG
+
+Version: 1.1.3 (06/17/2021)
+Time of run: Thu Jul 15 15:35:31 2021
+
+Command:/labs/Wegrzyn/gFACs/gFACs.pl -f braker_2.1.5_gff3 --splice-rescue --statistics --statistics-at-every-step --splice-table --min-exon-size 3 --min-intron-size 3 --get-fasta-without-introns --unique-genes-only --create-gtf --get-protein-fasta --fasta /labs/Wegrzyn/bikash/botany2021/contig_15_masked.fasta -O gFACs_output /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.gff3
+
+You have specfied a format:	BRAKER version 2.1.5 (braker.gff3) in gff3 format
+
+You have specified an output directory: gFACs_output
+
+Format command:	perl /labs/Wegrzyn/gFACs/format_scripts/braker_2.1.5_gff3.pl /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.gff3 gFACs_output  
+
+
+Flags:
+
+--no-processing has NOT been activated. I will look for overlapping gene space and see if it is the result of multiple transcripts mapping to the same location. Splice variants will be labeled as [gene].1, [gene].2, etc... and added to the end of gene_table.txt.
+	Command: perl /labs/Wegrzyn/gFACs/task_scripts/overlapping_exons.pl gFACs_output//gene_table.txt gFACs_output  >> gFACs_output//gFACs_log.txt
+Results:
+Number of genes with overlapping exons:	254
+Number of genes without overlapping exons:	1940
+	Command: perl /labs/Wegrzyn/gFACs/task_scripts/splice_variants.pl gFACs_output//gene_table.txt gFACs_output  >> gFACs_output//gFACs_log.txt
+Results: 254 genes became 579 transcripts.
+
+STATS:
+Number of genes:	2519
+Number of monoexonic genes:	337
+Number of multiexonic genes:	2182
+
+Number of positive strand genes:	1300
+Monoexonic:	175
+Multiexonic:	1125
+
+Number of negative strand genes:	1219
+Monoexonic:	162
+Multiexonic:	1057
+
+Average overall gene size:	1500.903
+Median overall gene size:	1744
+Average overall CDS size:	1407.055
+Median overall CDS size:	1071
+Average overall exon size:	193.957
+Median overall exon size:	116
+
+Average size of monoexonic genes:	761.030
+Median size of monoexonic genes:	562.5
+Largest monoexonic gene:	3006
+Smallest monoexonic gene:	201
+
+Average size of multiexonic genes:	1615.173
+Median size of multiexonic genes:	2021
+Largest multiexonic gene:	4289808
+Smallest multiexonic gene:	-5061050
+
+Average size of multiexonic CDS:	1506.831
+Median size of multiexonic CDS:	1140
+Largest multiexonic CDS:	11451
+Smallest multiexonic CDS:	201
+
+Average size of multiexonic exons:	183.303
+Median size of multiexonic exons:	114
+Average size of multiexonic introns:	862.288
+Median size of multiexonic introns:	98
+
+Average number of exons per multiexonic gene:	8.220
+Median number of exons per multiexonic gene:	6
+Largest multiexonic exon:	4939
+Smallest multiexonic exon:	3
+Most exons in one gene:	80
+
+Average number of introns per multiexonic gene:	7.220
+Median number of introns per multiexonic gene:	5
+Largest intron:	5061050
+Smallest intron:	23
+
+The following columns do not involve codons:
+Number of complete models:	2367
+Number of 5' only incomplete models:	75
+Number of 3' only incomplete models:	71
+Number of 5' and 3' incomplete models:	6
+
+Format Check!
+	Command: perl /labs/Wegrzyn/gFACs/task_scripts/gene_table_fixer.pl gFACs_output 
+
+Incompleteness Check! Genes will be labeled as 5' or 3' incompletes.
+	Command: perl /labs/Wegrzyn/gFACs/task_scripts/gene_editor.pl gFACs_output 
+
+--min-exon-size has been activated. Genes with an exon that is less than 3 will be removed from gene_table.txt
+	Command: perl /labs/Wegrzyn/gFACs/task_scripts/minimum_exon.pl gFACs_output//gene_table.txt gFACs_output 3   >> gFACs_output//gFACs_log.txt
+Results:
+Number of genes retained:	2519
+Number of genes lost:	0
+
+STATS:
+Number of genes:	2519
+Number of monoexonic genes:	337
+Number of multiexonic genes:	2182
+
+Number of positive strand genes:	1300
+Monoexonic:	175
+Multiexonic:	1125
+
+Number of negative strand genes:	1219
+Monoexonic:	162
+Multiexonic:	1057
+
+Average overall gene size:	6797.592
+Median overall gene size:	1747
+Average overall CDS size:	1407.055
+Median overall CDS size:	1071
+Average overall exon size:	193.957
+Median overall exon size:	116
+
+Average size of monoexonic genes:	761.030
+Median size of monoexonic genes:	562.5
+Largest monoexonic gene:	3006
+Smallest monoexonic gene:	201
+
+Average size of multiexonic genes:	7729.912
+Median size of multiexonic genes:	2025
+Largest multiexonic gene:	5061989
+Smallest multiexonic gene:	-3099
+
+Average size of multiexonic CDS:	1506.831
+Median size of multiexonic CDS:	1140
+Largest multiexonic CDS:	11451
+Smallest multiexonic CDS:	201
+
+Average size of multiexonic exons:	183.303
+Median size of multiexonic exons:	114
+Average size of multiexonic introns:	862.288
+Median size of multiexonic introns:	98
+
+Average number of exons per multiexonic gene:	8.220
+Median number of exons per multiexonic gene:	6
+Largest multiexonic exon:	4939
+Smallest multiexonic exon:	3
+Most exons in one gene:	80
+
+Average number of introns per multiexonic gene:	7.220
+Median number of introns per multiexonic gene:	5
+Largest intron:	5061050
+Smallest intron:	23
+
+The following columns do not involve codons:
+Number of complete models:	2370
+Number of 5' only incomplete models:	75
+Number of 3' only incomplete models:	71
+Number of 5' and 3' incomplete models:	3
+
+--min-intron-size has been activated. Genes with an intron that is less than 3 will be removed from gene_table.txt
+	Command: perl /labs/Wegrzyn/gFACs/task_scripts/minimum_intron.pl gFACs_output//gene_table.txt gFACs_output 3  >> gFACs_output//gFACs_log.txt
+Results:
+Number of genes retained:	2519
+Number of genes lost:	0
+
+STATS:
+Number of genes:	2519
+Number of monoexonic genes:	337
+Number of multiexonic genes:	2182
+
+Number of positive strand genes:	1300
+Monoexonic:	175
+Multiexonic:	1125
+
+Number of negative strand genes:	1219
+Monoexonic:	162
+Multiexonic:	1057
+
+Average overall gene size:	6797.592
+Median overall gene size:	1747
+Average overall CDS size:	1407.055
+Median overall CDS size:	1071
+Average overall exon size:	193.957
+Median overall exon size:	116
+
+Average size of monoexonic genes:	761.030
+Median size of monoexonic genes:	562.5
+Largest monoexonic gene:	3006
+Smallest monoexonic gene:	201
+
+Average size of multiexonic genes:	7729.912
+Median size of multiexonic genes:	2025
+Largest multiexonic gene:	5061989
+Smallest multiexonic gene:	-3099
+
+Average size of multiexonic CDS:	1506.831
+Median size of multiexonic CDS:	1140
+Largest multiexonic CDS:	11451
+Smallest multiexonic CDS:	201
+
+Average size of multiexonic exons:	183.303
+Median size of multiexonic exons:	114
+Average size of multiexonic introns:	862.288
+Median size of multiexonic introns:	98
+
+Average number of exons per multiexonic gene:	8.220
+Median number of exons per multiexonic gene:	6
+Largest multiexonic exon:	4939
+Smallest multiexonic exon:	3
+Most exons in one gene:	80
+
+Average number of introns per multiexonic gene:	7.220
+Median number of introns per multiexonic gene:	5
+Largest intron:	5061050
+Smallest intron:	23
+
+The following columns do not involve codons:
+Number of complete models:	2370
+Number of 5' only incomplete models:	75
+Number of 3' only incomplete models:	71
+Number of 5' and 3' incomplete models:	3
+
+You have specified a fasta! Indexing it...
+Creating index file from /labs/Wegrzyn/bikash/botany2021/contig_15_masked.fasta
+
+Checking the fasta for annotation scaffold match...
+	Command: perl /labs/Wegrzyn/gFACs/task_scripts/genome_check.pl /labs/Wegrzyn/bikash/botany2021/contig_15_masked.fasta gFACs_output  >> gFACs_output//gFACs_log.txt
+	...looks good!
+
+--unique-genes-only has been activated. The longest transcript is chosen if present. Otherwise, the first transcipt is chosen.
+	Command: perl /labs/Wegrzyn/gFACs/task_scripts/unique_genes.pl gFACs_output  >> gFACs_output//gFACs_log.txt
+Results:
+Number of genes in: 2519
+	579 were transcripts.
+	0 were non-transcript duplicates.
+Number of unique genes retained:	2194
+Number of genes lost:	325
+
+STATS:
+Number of genes:	2194
+Number of monoexonic genes:	322
+Number of multiexonic genes:	1872
+
+Number of positive strand genes:	1133
+Monoexonic:	169
+Multiexonic:	964
+
+Number of negative strand genes:	1061
+Monoexonic:	153
+Multiexonic:	908
+
+Average overall gene size:	7291.103
+Median overall gene size:	1685
+Average overall CDS size:	1340.252
+Median overall CDS size:	1038
+Average overall exon size:	199.967
+Median overall exon size:	119
+
+Average size of monoexonic genes:	765.084
+Median size of monoexonic genes:	561
+Largest monoexonic gene:	3006
+Smallest monoexonic gene:	204
+
+Average size of multiexonic genes:	8413.634
+Median size of multiexonic genes:	1946
+Largest multiexonic gene:	5061989
+Smallest multiexonic gene:	286
+
+Average size of multiexonic CDS:	1439.185
+Median size of multiexonic CDS:	1107
+Largest multiexonic CDS:	11451
+Smallest multiexonic CDS:	201
+
+Average size of multiexonic exons:	187.315
+Median size of multiexonic exons:	117
+Average size of multiexonic introns:	1043.606
+Median size of multiexonic introns:	97
+
+Average number of exons per multiexonic gene:	7.683
+Median number of exons per multiexonic gene:	6
+Largest multiexonic exon:	4939
+Smallest multiexonic exon:	3
+Most exons in one gene:	80
+
+Average number of introns per multiexonic gene:	6.683
+Median number of introns per multiexonic gene:	5
+Largest intron:	5061050
+Smallest intron:	23
+
+The following columns do not involve codons:
+Number of complete models:	2187
+Number of 5' only incomplete models:	6
+Number of 3' only incomplete models:	1
+Number of 5' and 3' incomplete models:	0
+
+--splice-table has been activated. Creating splice_table.txt catalog.
+	Command: perl /labs/Wegrzyn/gFACs/task_scripts/splice_table.pl /labs/Wegrzyn/bikash/botany2021/contig_15_masked.fasta gFACs_output  >> gFACs_output//gFACs_log.txt
+Results:
+	ct_ac	6	0.048%
+	gt_ag	12290	98.234%
+	ca_gg	1	0.008%
+	at_gg	1	0.008%
+	ct_tc	1	0.008%
+	at_ac	3	0.024%
+	gc_ag	209	1.671%
+
+--get-fasta has been activated. Nucleotide fasta will be created called genes.fasta.
+	Command: perl /labs/Wegrzyn/gFACs/task_scripts/get_fasta_without_introns.pl /labs/Wegrzyn/bikash/botany2021/contig_15_masked.fasta gFACs_output 
+
+--get-protein-fasta has been activated. Protein fasta will be created called genes.fasta.faa.
+	Command: perl /labs/Wegrzyn/gFACs/task_scripts/get_protein_fasta.pl /labs/Wegrzyn/bikash/botany2021/contig_15_masked.fasta gFACs_output 
+
+--create-gtf has been activated. A gtf file called out.gtf will be created.
+	Command: perl /labs/Wegrzyn/gFACs/task_scripts/add_start_stop_to_gene_table.pl /labs/Wegrzyn/bikash/botany2021/contig_15_masked.fasta gFACs_output 
+	Command: perl /labs/Wegrzyn/gFACs/task_scripts/gtf_creator.pl gFACs_output//start_and_stop_gene_table.txt gFACs_output /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.gff3 
+
+--statistics has been activated. Statistics will be printed to statistics.txt
+	Command: perl /labs/Wegrzyn/gFACs/task_scripts/classic_stats.pl gFACs_output//gene_table.txt > gFACs_output//statistics.txt
+
+Completed! Have a great day!
+

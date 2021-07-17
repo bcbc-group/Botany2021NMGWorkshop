@@ -1,0 +1,201 @@
+# BUSCO version is: 5.0.0 
+# The lineage dataset is: archaea_odb10 (Creation date: 2021-02-23, number of species: 404, number of BUSCOs: 194)
+# Busco id	Status	Sequence	Score	Length	OrthoDB url	Description
+860at2157	Missing
+1642at2157	Missing
+3905at2157	Complete	g1764.t1	734.7	673	https://www.orthodb.org/v10?query=3905at2157	DNA-directed RNA polymerase subunit
+6590at2157	Missing
+6736at2157	Missing
+7046at2157	Missing
+7724at2157	Missing
+7896at2157	Missing
+8899at2157	Missing
+8922at2157	Missing
+10236at2157	Missing
+13010at2157	Missing
+13531at2157	Missing
+13565at2157	Missing
+14061at2157	Missing
+14454at2157	Missing
+14889at2157	Missing
+17053at2157	Missing
+17629at2157	Missing
+18705at2157	Missing
+19750at2157	Missing
+21317at2157	Missing
+22545at2157	Missing
+22747at2157	Complete	g2154.t1	366.1	525	https://www.orthodb.org/v10?query=22747at2157	phenylalanine--tRNA ligase subunit alpha
+22842at2157	Missing
+23182at2157	Missing
+23221at2157	Missing
+24257at2157	Missing
+24288at2157	Complete	g570.t1	260.5	371	https://www.orthodb.org/v10?query=24288at2157	aspartate--tRNA(Asn) ligase
+25592at2157	Complete	g240.t1	378.7	353	https://www.orthodb.org/v10?query=25592at2157	Translation initiation factor 2 subunit gamma
+25871at2157	Missing
+29893at2157	Missing
+30130at2157	Complete	g1125.t1	102.8	201	https://www.orthodb.org/v10?query=30130at2157	DNA repair and recombination protein RadA
+31316at2157	Missing
+31722at2157	Missing
+32079at2157	Missing
+32191at2157	Missing
+32623at2157	Missing
+35648at2157	Complete	g1323.t1	243.8	263	https://www.orthodb.org/v10?query=35648at2157	Adenylosuccinate synthetase
+35861at2157	Missing
+36028at2157	Missing
+37207at2157	Missing
+37299at2157	Missing
+39322at2157	Missing
+41214at2157	Missing
+41305at2157	Missing
+43727at2157	Missing
+44076at2157	Missing
+46017at2157	Missing
+47919at2157	Missing
+48934at2157	Missing
+50844at2157	Missing
+51351at2157	Missing
+52427at2157	Missing
+54988at2157	Missing
+55024at2157	Complete	g1534.t1	302.4	440	https://www.orthodb.org/v10?query=55024at2157	Phenylalanine--tRNA ligase beta subunit
+56027at2157	Missing
+57545at2157	Missing
+58019at2157	Missing
+58022at2157	Missing
+58340at2157	Complete	g341.t1	168.2	139	https://www.orthodb.org/v10?query=58340at2157	fibrillarin-like rRNA methylase
+59062at2157	Missing
+59314at2157	Missing
+59861at2157	Missing
+60366at2157	Missing
+60670at2157	Missing
+60954at2157	Missing
+61613at2157	Missing
+61936at2157	Missing
+62508at2157	Missing
+63341at2157	Missing
+64860at2157	Missing
+65833at2157	Missing
+66209at2157	Missing
+66811at2157	Missing
+69351at2157	Missing
+70269at2157	Complete	g988.t1	121.6	188	https://www.orthodb.org/v10?query=70269at2157	Ribosomal protein L1
+70525at2157	Missing
+70865at2157	Complete	g1762.t1	111.8	197	https://www.orthodb.org/v10?query=70865at2157	tRNA (guanine(26)-N(2))-dimethyltransferase
+72726at2157	Missing
+73593at2157	Complete	g2019.t1	122.5	222	https://www.orthodb.org/v10?query=73593at2157	50S ribosomal protein L10
+74812at2157	Missing
+75288at2157	Missing
+76134at2157	Missing
+76877at2157	Missing
+78046at2157	Complete	g954.t1	154.6	165	https://www.orthodb.org/v10?query=78046at2157	Pyridoxal 5'-phosphate synthase subunit PdxT
+79065at2157	Missing
+79845at2157	Duplicated	g276.t1	128.7	223	https://www.orthodb.org/v10?query=79845at2157	FAD synthase
+79845at2157	Duplicated	g276.t2	128.7	223	https://www.orthodb.org/v10?query=79845at2157	FAD synthase
+80498at2157	Missing
+80501at2157	Complete	g193.t1	81.0	167	https://www.orthodb.org/v10?query=80501at2157	RNA-processing protein
+80629at2157	Missing
+82104at2157	Complete	g601.t1	111.3	127	https://www.orthodb.org/v10?query=82104at2157	50S ribosomal protein L10e
+82755at2157	Missing
+82853at2157	Missing
+83050at2157	Missing
+84219at2157	Missing
+84684at2157	Missing
+85023at2157	Complete	g2035.t1	169.3	171	https://www.orthodb.org/v10?query=85023at2157	Ribosomal protein L15e
+85279at2157	Complete	g2178.t1	67.2	94	https://www.orthodb.org/v10?query=85279at2157	RNA-binding protein
+85293at2157	Missing
+87367at2157	Missing
+87520at2157	Missing
+88531at2157	Missing
+89321at2157	Missing
+89943at2157	Missing
+90096at2157	Missing
+90641at2157	Complete	g1795.t1	182.3	191	https://www.orthodb.org/v10?query=90641at2157	Signal recognition particle receptor FtsY
+90817at2157	Complete	g1379.t1	74.6	171	https://www.orthodb.org/v10?query=90817at2157	phosphoribosylformylglycinamidine synthase I
+90882at2157	Fragmented	g426.t1	67.3	123	https://www.orthodb.org/v10?query=90882at2157	Mevalonate kinase
+91154at2157	Complete	g2022.t1	134.2	103	https://www.orthodb.org/v10?query=91154at2157	30S ribosomal protein S8
+91297at2157	Missing
+91632at2157	Missing
+91936at2157	Missing
+92409at2157	Missing
+92795at2157	Missing
+93236at2157	Missing
+93256at2157	Missing
+94875at2157	Missing
+94889at2157	Missing
+95578at2157	Missing
+96138at2157	Missing
+97230at2157	Missing
+98179at2157	Missing
+98187at2157	Complete	g1352.t1	70.5	123	https://www.orthodb.org/v10?query=98187at2157	50S ribosomal protein L11
+98221at2157	Missing
+98657at2157	Missing
+99236at2157	Complete	g183.t1	130.4	112	https://www.orthodb.org/v10?query=99236at2157	30S ribosomal protein S19
+99734at2157	Missing
+99842at2157	Missing
+101957at2157	Missing
+102178at2157	Missing
+102360at2157	Missing
+102399at2157	Missing
+103467at2157	Missing
+104254at2157	Missing
+104636at2157	Missing
+104702at2157	Missing
+104786at2157	Missing
+105095at2157	Complete	g505.t1	37.0	90	https://www.orthodb.org/v10?query=105095at2157	TIGR00270 family protein
+105165at2157	Missing
+105421at2157	Missing
+105604at2157	Missing
+105851at2157	Missing
+106462at2157	Duplicated	g1095.t1	159.5	121	https://www.orthodb.org/v10?query=106462at2157	Nucleoside diphosphate kinase
+106462at2157	Duplicated	g1328.t1	155.3	139	https://www.orthodb.org/v10?query=106462at2157	Nucleoside diphosphate kinase
+106462at2157	Duplicated	g33.t1	143.2	121	https://www.orthodb.org/v10?query=106462at2157	Nucleoside diphosphate kinase
+106603at2157	Missing
+107015at2157	Missing
+107212at2157	Duplicated	g1786.t1	59.4	83	https://www.orthodb.org/v10?query=107212at2157	50S ribosomal protein L21e
+107212at2157	Duplicated	g1997.t1	56.3	83	https://www.orthodb.org/v10?query=107212at2157	50S ribosomal protein L21e
+107993at2157	Complete	g315.t1	80.1	91	https://www.orthodb.org/v10?query=107993at2157	Ribosomal protein S10
+108145at2157	Missing
+108717at2157	Missing
+109335at2157	Missing
+110798at2157	Missing
+111803at2157	Missing
+112466at2157	Missing
+112720at2157	Missing
+113971at2157	Missing
+114285at2157	Missing
+114541at2157	Missing
+115384at2157	Missing
+115425at2157	Missing
+115808at2157	Complete	g1053.t1	101.3	257	https://www.orthodb.org/v10?query=115808at2157	Geranylgeranyl reductase
+115947at2157	Complete	g543.t1	76.6	95	https://www.orthodb.org/v10?query=115947at2157	Peptidyl-tRNA hydrolase
+116294at2157	Missing
+116732at2157	Missing
+116879at2157	Missing
+117225at2157	Missing
+117241at2157	Missing
+119044at2157	Missing
+119723at2157	Missing
+121171at2157	Missing
+121548at2157	Missing
+121943at2157	Missing
+122290at2157	Complete	g2140.t1	40.6	44	https://www.orthodb.org/v10?query=122290at2157	50S ribosomal protein L37Ae
+123463at2157	Missing
+123503at2157	Missing
+123853at2157	Missing
+123859at2157	Missing
+124073at2157	Missing
+124429at2157	Missing
+124805at2157	Complete	g2115.t1	54.9	84	https://www.orthodb.org/v10?query=124805at2157	30S ribosomal protein S24e
+124913at2157	Missing
+124973at2157	Missing
+125162at2157	Missing
+125788at2157	Missing
+126193at2157	Complete	g327.t1	70.0	45	https://www.orthodb.org/v10?query=126193at2157	DNA-directed RNA polymerase subunit K
+127293at2157	Missing
+128227at2157	Missing
+128960at2157	Complete	g97.t1	15.9	57	https://www.orthodb.org/v10?query=128960at2157	ribonuclease P
+129321at2157	Complete	g407.t1	41.8	60	https://www.orthodb.org/v10?query=129321at2157	DNA-directed RNA polymerase subunit L
+129447at2157	Missing
+129924at2157	Missing
+130316at2157	Missing
+130364at2157	Missing
+131584at2157	Missing

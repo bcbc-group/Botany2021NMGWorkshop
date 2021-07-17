@@ -1,0 +1,21 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+g1993.t1             -            307 1074831at2           -            386     0.011   12.0   0.1   1   2      0.39   3.2e+02   -2.7   0.1    23    36    87   100    80   104 0.82 -
+g1993.t1             -            307 1074831at2           -            386     0.011   12.0   0.1   2   2   2.8e-05     0.023   10.9   0.0   284   332   197   245   187   264 0.73 -
+g695.t1              -            721 1074831at2           -            386     0.051    9.8   2.6   1   2    0.0013       1.1    5.4   0.3    24    42   117   135   112   153 0.83 -
+g695.t1              -            721 1074831at2           -            386     0.051    9.8   2.6   2   2    0.0029       2.5    4.3   0.1   288   333   225   270   211   275 0.85 -
+g1600.t1             -           1456 1074831at2           -            386      0.53    6.5   7.3   1   4    0.0047         4    3.6   0.0    22    42   202   222   190   252 0.88 -
+g1600.t1             -           1456 1074831at2           -            386      0.53    6.5   7.3   2   4     0.035        30    0.7   0.1   286   336   342   392   339   400 0.85 -
+g1600.t1             -           1456 1074831at2           -            386      0.53    6.5   7.3   3   4     0.011       9.5    2.4   0.6    22    41   893   912   883   927 0.88 -
+g1600.t1             -           1456 1074831at2           -            386      0.53    6.5   7.3   4   4     0.074        62   -0.3   0.1   297   336  1012  1051  1008  1069 0.76 -
+#
+# Program:         hmmsearch
+# Version:         3.2.1 (June 2018)
+# Pipeline mode:   SEARCH
+# Query file:      /labs/Wegrzyn/bikash/botany2021/braker/busco_downloads/lineages/bacteria_odb10/hmms/1074831at2.hmm
+# Target file:     /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.aa
+# Option settings: /isg/shared/apps/hmmer/3.2.1/bin/hmmsearch --domtblout /labs/Wegrzyn/bikash/botany2021/braker/busco_output/auto_lineage/run_bacteria_odb10/hmmer_output/1074831at2.out --cpu 1 /labs/Wegrzyn/bikash/botany2021/braker/busco_downloads/lineages/bacteria_odb10/hmms/1074831at2.hmm /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.aa 
+# Current dir:     /labs/Wegrzyn/bikash/botany2021/braker
+# Date:            Thu Jul 15 15:21:28 2021
+# [ok]

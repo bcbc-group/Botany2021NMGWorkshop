@@ -1,0 +1,129 @@
+# BUSCO version is: 5.0.0 
+# The lineage dataset is: bacteria_odb10 (Creation date: 2020-03-06, number of species: 4085, number of BUSCOs: 124)
+# Busco id	Status	Sequence	Score	Length	OrthoDB url	Description
+4421at2	Missing
+9601at2	Missing
+26038at2	Complete	g1379.t1	149.9	356	https://www.orthodb.org/v10?query=26038at2	phosphoribosylformylglycinamidine synthase
+91428at2	Missing
+95696at2	Missing
+143460at2	Missing
+182107at2	Missing
+219876at2	Missing
+223233at2	Missing
+226836at2	Missing
+232152at2	Complete	g1323.t1	264.9	282	https://www.orthodb.org/v10?query=232152at2	adenylosuccinate synthase
+267682at2	Missing
+353391at2	Missing
+384865at2	Missing
+402899at2	Missing
+430176at2	Missing
+462069at2	Missing
+469058at2	Fragmented	g2154.t1	176.3	206	https://www.orthodb.org/v10?query=469058at2	phenylalanine--tRNA ligase subunit alpha
+504464at2	Missing
+505485at2	Missing
+533698at2	Missing
+662686at2	Missing
+665824at2	Missing
+761140at2	Fragmented	g237.t1	35.2	79	https://www.orthodb.org/v10?query=761140at2	methionine--tRNA ligase
+776861at2	Missing
+837522at2	Missing
+841869at2	Missing
+874197at2	Missing
+923547at2	Missing
+932854at2	Missing
+932993at2	Missing
+961486at2	Missing
+981870at2	Missing
+984717at2	Missing
+1009041at2	Missing
+1024388at2	Missing
+1036075at2	Missing
+1043239at2	Missing
+1049662at2	Missing
+1054741at2	Missing
+1069591at2	Fragmented	g1204.t1	84.1	114	https://www.orthodb.org/v10?query=1069591at2	tRNA dimethylallyltransferase
+1074831at2	Missing
+1080436at2	Missing
+1093223at2	Missing
+1132353at2	Missing
+1151822at2	Missing
+1166299at2	Missing
+1211060at2	Missing
+1257362at2	Duplicated	g43.t2	92.3	232	https://www.orthodb.org/v10?query=1257362at2	tRNA N6-adenosine threonylcarbamoyltransferase
+1257362at2	Duplicated	g43.t3	91.9	232	https://www.orthodb.org/v10?query=1257362at2	tRNA N6-adenosine threonylcarbamoyltransferase
+1266295at2	Missing
+1270636at2	Complete	g1075.t1	140.8	139	https://www.orthodb.org/v10?query=1270636at2	50S ribosomal protein L3
+1272633at2	Missing
+1346419at2	Missing
+1395197at2	Missing
+1398618at2	Missing
+1419877at2	Missing
+1456375at2	Missing
+1470978at2	Missing
+1490892at2	Missing
+1491686at2	Missing
+1497415at2	Missing
+1502854at2	Duplicated	g187.t2	214.2	181	https://www.orthodb.org/v10?query=1502854at2	guanylate kinase
+1502854at2	Duplicated	g187.t1	214.2	181	https://www.orthodb.org/v10?query=1502854at2	guanylate kinase
+1504821at2	Missing
+1505038at2	Complete	g1422.t1	176.4	147	https://www.orthodb.org/v10?query=1505038at2	30S ribosomal protein S5
+1540940at2	Missing
+1567535at2	Missing
+1572673at2	Complete	g1848.t1	98.6	110	https://www.orthodb.org/v10?query=1572673at2	50S ribosomal protein L4
+1574817at2	Missing
+1590629at2	Missing
+1592033at2	Missing
+1595498at2	Missing
+1623045at2	Missing
+1661836at2	Missing
+1666043at2	Missing
+1671455at2	Complete	g1049.t1	182.9	162	https://www.orthodb.org/v10?query=1671455at2	50S ribosomal protein L1
+1674344at2	Missing
+1676462at2	Missing
+1692188at2	Missing
+1698718at2	Complete	g1030.t1	79.1	81	https://www.orthodb.org/v10?query=1698718at2	50S ribosomal protein L19
+1701531at2	Missing
+1702697at2	Missing
+1707228at2	Missing
+1713391at2	Missing
+1720952at2	Missing
+1758685at2	Missing
+1760144at2	Missing
+1766414at2	Complete	g1317.t1	94.8	98	https://www.orthodb.org/v10?query=1766414at2	30S ribosomal protein S9
+1772647at2	Missing
+1776954at2	Missing
+1786618at2	Missing
+1799923at2	Missing
+1822215at2	Fragmented	g1583.t1	94.5	99	https://www.orthodb.org/v10?query=1822215at2	50S ribosomal protein L13
+1822695at2	Missing
+1827295at2	Missing
+1827334at2	Missing
+1830156at2	Missing
+1838961at2	Missing
+1842956at2	Missing
+1844275at2	Missing
+1846503at2	Missing
+1874945at2	Missing
+1890943at2	Missing
+1893906at2	Missing
+1904463at2	Complete	g751.t1	109.9	65	https://www.orthodb.org/v10?query=1904463at2	50S ribosomal protein L27
+1906715at2	Complete	g1732.t1	42.0	79	https://www.orthodb.org/v10?query=1906715at2	Protein GrpE
+1932144at2	Missing
+1937072at2	Missing
+1937493at2	Missing
+1940575at2	Missing
+1949059at2	Complete	g1662.t1	96.8	98	https://www.orthodb.org/v10?query=1949059at2	50S ribosomal protein L21
+1959318at2	Missing
+1963491at2	Missing
+1971380at2	Missing
+1978865at2	Missing
+1990141at2	Missing
+1990650at2	Missing
+2005443at2	Missing
+2012682at2	Missing
+2035880at2	Missing
+2040741at2	Complete	g425.t1	33.9	58	https://www.orthodb.org/v10?query=2040741at2	50S ribosomal protein L24
+2046660at2	Missing
+2063644at2	Missing
+2066663at2	Missing
+2075502at2	Missing

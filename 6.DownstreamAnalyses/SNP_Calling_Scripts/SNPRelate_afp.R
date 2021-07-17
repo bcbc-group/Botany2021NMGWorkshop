@@ -12,11 +12,6 @@
 #launch needed libraries
 library(gdsfmt)
 library(SNPRelate)
-library(VariantAnnotation)
-library(RColorBrewer)
-
-library(gdsfmt)
-library(SNPRelate)
 library(RColorBrewer)
 
 #set working directory if necessary

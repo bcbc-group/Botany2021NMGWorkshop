@@ -1,0 +1,28 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+g1224.t1             -            911 674169at2759         -            271     9e-08   28.8   0.0   1   2   1.5e-06   0.00031   17.3   0.0    34    70   358   394   353   427 0.78 -
+g1224.t1             -            911 674169at2759         -            271     9e-08   28.8   0.0   2   2    0.0005      0.11    8.9   0.0    34    66   666   698   660   704 0.87 -
+g1747.t1             -            500 674169at2759         -            271   6.4e-05   19.5   0.0   1   1   6.4e-07   0.00013   18.4   0.0    34    91   240   297   234   309 0.84 -
+g1600.t1             -           1456 674169at2759         -            271   0.00015   18.3   0.1   1   2   0.00014     0.029   10.8   0.0    31    59   200   228   188   252 0.76 -
+g1600.t1             -           1456 674169at2759         -            271   0.00015   18.3   0.1   2   2    0.0081       1.7    5.0   0.0    34    53   894   913   880   936 0.83 -
+g1878.t1             -            561 674169at2759         -            271   0.00079   15.9   0.0   1   1     1e-05    0.0021   14.5   0.0    34    91   252   309   246   314 0.80 -
+g762.t2              -            681 674169at2759         -            271    0.0028   14.1   0.1   1   1   2.1e-05    0.0044   13.5   0.1    32    57   105   130   103   134 0.88 -
+g762.t1              -            682 674169at2759         -            271    0.0028   14.1   0.1   1   1   2.1e-05    0.0044   13.5   0.1    32    57   105   130   103   134 0.88 -
+g695.t1              -            721 674169at2759         -            271    0.0055   13.2   0.0   1   1   5.9e-05     0.012   12.0   0.0    32    78   114   160   111   170 0.85 -
+g1944.t1             -            407 674169at2759         -            271    0.0068   12.9   0.0   1   1   5.2e-05     0.011   12.2   0.0    34    66   122   154   118   170 0.84 -
+g708.t1              -            362 674169at2759         -            271    0.0091   12.4   0.1   1   1   8.3e-05     0.018   11.5   0.1    29    57   205   233   201   247 0.87 -
+g1968.t1             -           1055 674169at2759         -            271     0.011   12.2   0.0   1   1   0.00011     0.024   11.1   0.0    32    60    72   100    70   105 0.89 -
+g968.t1              -            632 674169at2759         -            271     0.016   11.7   0.0   1   2      0.69   1.4e+02   -1.3   0.0    36    51   135   150   133   157 0.82 -
+g968.t1              -            632 674169at2759         -            271     0.016   11.7   0.0   2   2   0.00044     0.093    9.1   0.0    34    78   445   491   441   523 0.76 -
+g708.t2              -            609 674169at2759         -            271     0.017   11.6   0.1   1   1   0.00016     0.034   10.6   0.1    29    57   205   233   201   247 0.87 -
+#
+# Program:         hmmsearch
+# Version:         3.2.1 (June 2018)
+# Pipeline mode:   SEARCH
+# Query file:      /labs/Wegrzyn/bikash/botany2021/braker/busco_downloads/lineages/eukaryota_odb10/hmms/674169at2759.hmm
+# Target file:     /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.aa
+# Option settings: /isg/shared/apps/hmmer/3.2.1/bin/hmmsearch --domtblout /labs/Wegrzyn/bikash/botany2021/braker/busco_output/auto_lineage/run_eukaryota_odb10/hmmer_output/initial_run_results/674169at2759.out --cpu 1 /labs/Wegrzyn/bikash/botany2021/braker/busco_downloads/lineages/eukaryota_odb10/hmms/674169at2759.hmm /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.aa 
+# Current dir:     /labs/Wegrzyn/bikash/botany2021/braker
+# Date:            Thu Jul 15 15:22:07 2021
+# [ok]

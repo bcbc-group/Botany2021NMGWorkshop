@@ -1,0 +1,14 @@
+# BUSCO version is: 5.0.0 
+# The lineage dataset is: bacteria_odb10 (Creation date: 2020-03-06, number of species: 4085, number of BUSCOs: 124)
+# Summarized benchmarking in BUSCO notation for file /labs/Wegrzyn/bikash/botany2021/braker/braker/augustus.hints.aa
+# BUSCO was run in mode: proteins
+
+	***** Results: *****
+
+	C:11.3%[S:9.7%,D:1.6%],F:3.2%,M:85.5%,n:124	   
+	14	Complete BUSCOs (C)			   
+	12	Complete and single-copy BUSCOs (S)	   
+	2	Complete and duplicated BUSCOs (D)	   
+	4	Fragmented BUSCOs (F)			   
+	106	Missing BUSCOs (M)			   
+	124	Total BUSCO groups searched		   

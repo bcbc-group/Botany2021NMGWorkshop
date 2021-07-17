@@ -13,9 +13,9 @@ cd $1
 #make a dir for your output and copy or symlink some files there
 mkdir /scratch/annotation_output
 cd /scratch/annotation_output
-#cp /scratch/Botany2020NMGWorkshop/annotation/2transfer/contig_15.fasta .
-ln -s  /scratch/BotanyNMGWorkshop/annotation/2transfer/contig_15_masked.fasta .
-ln -s /scratch/BotanyNMGWorkshop/annotation/2transfer/*.fastq .
+
+ln -s /scratch/Botany2020NMGWorkshop/annotation/tutorial/*.fastq .
+ln -s  /scratch/Botany2020NMGWorkshop/annotation/2transfer/contig_15_masked.fasta .
 
 #index reference fasta file; We will use only contig_15 for demo purposes
  /opt/hisat-genotype-top/hisat2-build contig_15_masked.fasta contig_15
