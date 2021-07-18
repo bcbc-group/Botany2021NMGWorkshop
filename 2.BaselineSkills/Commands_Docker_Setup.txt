@@ -1,0 +1,26 @@
+#stop docker
+sudo service docker stop
+
+#edit daemon.json (only if necessary)
+sudo emacs /etc/docker/daemon.json
+
+#and add (may already be done):
+{
+"graph": "/scratch/docker"
+}
+# Press Ctrl-x-c to exit emacs
+
+#copy current dir to new one
+sudo rsync -aP /var/lib/docker/ /scratch/docker
+
+#rename old docker dir, do no delete until you test config works
+sudo mv /var/lib/docker /var/lib/docker.old
+
+sudo service docker start
+
+docker pull ezlabgva/busco:v5.1.2_cv1
+
+docker pull maplesond/portcullis:stable #this is in 3_rnaseq_cleanup.sh
+
+docker pull cyverseuk/mikado #this is in 3_rnaseq_cleanup.sh
+
