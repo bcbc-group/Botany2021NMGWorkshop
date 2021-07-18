@@ -2,6 +2,8 @@
 # Step 1. Mapping reads to genome
 cd /scratch/
 
+mkdir SNP_calling_exercise
+
 cd SNP_calling_exercise
 
 cp /scratch/Botany2020NMGWorkshop/raw_data/Ugibba/subset_fastq/*fastq.gz .
