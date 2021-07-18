@@ -35,9 +35,6 @@ snpset.id <- unlist(snpset)
 
 #run PCA
 pca <- snpgdsPCA(genofile, snp.id=snpset.id, num.thread=2)
-pdf("PCA_plot_eigenvectors.pdf")
-plot(pca)
-dev.off()
 
 # variance proportion (%)
 pc.percent <- pca$varprop*100
