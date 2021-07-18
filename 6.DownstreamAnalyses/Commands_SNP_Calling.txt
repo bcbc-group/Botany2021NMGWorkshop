@@ -62,7 +62,8 @@ cp /scratch/Botany2020NMGWorkshop/Genome_assembly/SNP_calling/populations.snps.v
 
 /scratch/Installed_programs/vcftools/bin/vcftools --vcf populations.snps.vcf --max-missing 0.6 --min-meanDP 3 --max-meanDP 100 --maf 0.05 --mac 3 --recode --recode-INFO-all --out Ugibba_SNPs_filtered
 
-#initial pass throwing out all SNPs that are missing 60%
+# initial pass throwing out all SNPs that are missing more than 60%
+# (0 allows sites that are completely missing and 1 indicates no missing data allowed)
 /scratch/Installed_programs/vcftools/bin/vcftools --vcf populations.snps.vcf --max-missing 0.4 --min-alleles 2 --max-alleles 2 --recode --recode-INFO-all --out Ugibba_first_pass
 
 
@@ -78,13 +79,17 @@ awk '$5 > 0.50' out.imiss | cut -f1 > lowDP50.indv
 
 /scratch/Installed_programs/vcftools/bin/vcftools --vcf Ugibba_first_pass.recode.vcf --max-missing 0.4 --remove lowDP50.indv --recode --recode-INFO-all --out Ugibba_filtered_SNPs
 
-cp /scratch/Botany2021NMGWorkshop/6.DownstreamAnalyses/SNP_Calling_Scripts/SNPRelate_afp.R .
-
-cp /scratch/Botany2020NMGWorkshop/Genome_assembly/SNP_calling/Ugibba_filtered_SNPs_renamed.recode.vcf .
+# Read filtered SNP file back into Stacks to produce multiple files that can be used for downstream analyses:
+/opt/stacks-2.55/populations --batch-size 1 -V Ugibba_filtered_SNPs.recode.vcf -O ./ -M /scratch/Botany2020NMGWorkshop/Genome_assembly/SNP_calling/population_map.txt -t 4 --ordered-export --fstats --vcf --treemix --plink --structure --radpainter --genepop --fasta-samples
 
 
 ######
 # Step 4. PCA in R
+
+cp /scratch/Botany2021NMGWorkshop/6.DownstreamAnalyses/SNP_Calling_Scripts/SNPRelate_afp.R .
+
+cp /scratch/Botany2020NMGWorkshop/Genome_assembly/SNP_calling/Ugibba_filtered_SNPs_renamed.recode.vcf .
+
 # Make sure we are in SNP_calling_exercise:
 cd /scratch/SNP_calling_exercise/
 
