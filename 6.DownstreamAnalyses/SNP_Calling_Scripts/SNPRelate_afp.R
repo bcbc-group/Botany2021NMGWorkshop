@@ -35,9 +35,6 @@ snpset.id <- unlist(snpset)
 
 #run PCA
 pca <- snpgdsPCA(genofile, snp.id=snpset.id, num.thread=2)
-pdf("PCA_plot_eigenvectors.pdf")
-plot(pca)
-dev.off()
 
 # variance proportion (%)
 pc.percent <- pca$varprop*100
@@ -78,13 +75,11 @@ dev.off()
 
 pdf("PCA_unique_colors_PC1vsPC2.pdf",10,10)
 col.list <- palette
-plot(tab$EV1,tab$EV2, col=col.list[as.integer(tab$pop)], cex=3, pch=16, main="SNP PCA", xlab="eigenvector 1 (16.95%)", ylab="eigenvector 2
- (14.8%)")
+plot(tab$EV1,tab$EV2, col=col.list[as.integer(tab$pop)], cex=3, pch=16, main="SNP PCA", xlab="eigenvector 1", ylab="eigenvector 2")
 legend("topright", legend=levels(tab$pop), cex=1,pch=20, col=col.list[1:nlevels(tab$pop)])
 dev.off()
 
 pdf("PCA_unique_colors_PC2vsPC3.pdf",10,10)
 col.list <- palette
-plot(tab$EV2,tab$EV3, col=col.list[as.integer(tab$pop)], cex=3, pch=16, main="SNP PCA", xlab="eigenvector 2 (14.8%)", ylab="eigenvector 3
-(9.3%)")
+plot(tab$EV2,tab$EV3, col=col.list[as.integer(tab$pop)], cex=3, pch=16, main="SNP PCA", xlab="eigenvector 2", ylab="eigenvector 3")
 dev.off()
