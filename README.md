@@ -1,6 +1,6 @@
 # Botany2021NMGWorkshop
 
-A repo for scripts and associated files for the 2021 Virtual Nonmodel Genomics Workshop
+A repo for all scripts and associated files for the 2021 Virtual Nonmodel Genomics Workshop
 
 The contributors to this workshop are: Jacob Landis (jbl256@cornell.edu) Fay-Wei Li (fl329@cornell.edu) Adrian Powell (afp43@cornell.edu) Bikash Shrestha (bikash.shrestha@uconn.edu) Suzy Strickler (srs57@cornell.edu) Jing Zhang (jz322@cornell.edu)
 
